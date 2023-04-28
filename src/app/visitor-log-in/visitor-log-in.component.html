@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div class="background-pic"></div>
+    
+    <div class="title-cont">
+        <h1>Vis<span>Go</span></h1>
+        <img src="../../assets/images/6347087.jpg" class="welcome-pic">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of t</p>
+    </div>
+
+    <div class="main-cont">
+
+        <div class="sub-cont1">
+            <h1>Choose Account Type</h1>
+        </div>
+
+        <div class="sub-cont2">
+            
+            <div class="visitor">
+                <div class="visitor-btn" routerLink="/VisitorLogin">
+                    <img class="acc-icon" src="../../assets/images/id-card.png">
+                   <h3>Visitor</h3>
+                </div>
+            </div>
+
+            <div class="host">
+                <div class="host-btn" routerLink="/">
+                    <img class="acc-icon" src="../../assets/images/host.png">
+                   <h3>Host</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-cont5">
+            <h1>LOG-IN AS A <span>VISITOR</span></h1>
+        </div>
+
+        <div class="sub-cont3">
+
+            <label for="property-name"><b>Select a Village/Building</b></label>
+                <select name="property" id="property">
+                    <optgroup label="Villages">
+                        <option value="Camella">Camella</option>
+                        <option value="Lancaster">Lancaster</option>
+                      </optgroup>
+                      <optgroup label="Buildings">
+                        <option value="Court Plaza Dormitory">Court Plaza Dormitory</option>
+                        <option value="CMDL's Dormitory">CMDL's Dormitory</option>
+                      </optgroup>
+                </select>
+
+            <label for="uname"><b>Username/Email</b></label>
+            <input type="text" name="uname" required>
+
+            <label for="pass"><b>Password</b></label>
+            <input type="password" name="uname" required>
+        </div>
+
+        <div class="forgotpass">Forgot Password?</div>
+
+        <div class="sub-cont4">
+            <button class="log-btn">Log-In</button>
+            <button class="sign-btn" routerLink="/VisitorRegistration">Sign-Up</button>
+        </div>
+
+        <div class="login-admin">Click this to LOG-IN as a ‘Admin’ </div>
+    </div>
+
+</body>
+</html>
