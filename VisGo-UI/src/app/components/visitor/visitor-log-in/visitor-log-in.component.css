@@ -1,0 +1,8 @@
+@import url(../../../../assets/css/LoginPage.css);
+
+.visitor-btn{
+    background-color: var(--orange);
+}
+.host-btn{
+    background-color: var(--white);
+}
