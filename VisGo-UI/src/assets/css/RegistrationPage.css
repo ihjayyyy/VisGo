@@ -48,7 +48,7 @@
     width: 100%;
     text-align: left;
     margin: 0 0 .2rem 0;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .sub-cont1 p span{
@@ -61,6 +61,7 @@
 }
 
 .sub-cont1 h1{
+    margin: .5rem 0 0 0;
     font-size: 2rem;
 }
 
@@ -70,7 +71,6 @@
 
 .sub-cont2{
     z-index: 2;
-    margin: 10px 0 0 0 ;
     padding: 0rem 2rem;
 }
 
@@ -99,7 +99,7 @@ input[type=text], input[type=password]{
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 }
 .form-group{
-    margin-top:15px ;
+    margin:5px 0px 10px 0px;
 }
 
 .label {
@@ -247,6 +247,7 @@ like a tickmark */
     .sub-cont1 p{
         font-weight: 600;
         text-align: right;
+        font-size: 0.8rem;
     }
 
     .sub-cont1 p span{
@@ -278,6 +279,10 @@ like a tickmark */
         bottom: 5px;
         width: 5px;
         height: 11px;
+    }
+
+    .sub-cont1 p{
+        font-size: 1rem;
     }
 }
 
