@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
 <body>
 
     <div class="background-pic"></div>
@@ -45,35 +38,61 @@
         
         <div class="sub-cont4">
 
-            <label for="property-name"><b>Select a Village/Building</b></label>
-                <select name="property" id="property">
-                    <optgroup label="Villages">
-                        <option value="Camella">Camella</option>
-                        <option value="Lancaster">Lancaster</option>
-                      </optgroup>
-                      <optgroup label="Buildings">
-                        <option value="Court Plaza Dormitory">Court Plaza Dormitory</option>
-                        <option value="CMDL's Dormitory">CMDL's Dormitory</option>
-                      </optgroup>
-                </select>
-            
-            
-            <label for="uname"><b>Username/Email</b></label>
-            <input type="text" name="uname" required>
+            <form [formGroup]="hostLoginForm" (ngSubmit)="onSubmit()">
 
-            <label for="pass"><b>Password</b></label>
-            <input type="password" name="uname" required>
-            <div class="forgotpass">Forgot Password?</div>
-            
-            <div class="btns">
-                <button class="log-btn">Log-In</button>
-                <button class="sign-btn" routerLink="/HomeOwnerRegistration">Register</button>
-            </div>
+                <div class="form-group">
+                    <label for="property-name"><b>Select a Village/Building</b></label>
+                    <div class="input-cont">
+                        <select name="property" id="property">
+                            <optgroup label="Villages">
+                                <option value="Camella">Camella</option>
+                                <option value="Lancaster">Lancaster</option>
+                              </optgroup>
+                              <optgroup label="Buildings">
+                                <option value="Court Plaza Dormitory">Court Plaza Dormitory</option>
+                                <option value="CMDL's Dormitory">CMDL's Dormitory</option>
+                              </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="uname"><b>Username/Email</b></label>
+                    <div class="input-cont">
+                        <input type="text" name="uname" required formControlName="uname">
+                    </div>
 
+                    <div class="alert" *ngIf="fc.uname.invalid && (fc.uname.dirty || fc.uname.touched)">
+                        <div *ngIf="fc.uname.errors?.['required']">
+                            Username is required.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pass"><b>Password</b></label>
+                    <div class="input-cont">      
+                        <input [type]="type" name="pass" require formControlName="pass">
+                        <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+                    </div>
+                    <div class="alert" *ngIf="fc.pass.invalid && (fc.pass.dirty || fc.pass.touched)">
+                        <div *ngIf="fc.pass.errors?.['required']">
+                            Password is required.
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="forgotpass">Forgot Password?</div>
+
+                <div class="btns">
+                    <button class="log-btn" type="submit"  (click)="onSubmit">Log-In</button>
+                    <button class="sign-btn" routerLink="/HomeOwnerRegistration">Register</button>
+                </div>
+
+            </form>
         </div>
 
         <div class="login-admin" routerLink="/AdminLogin">Click this to LOG-IN as a ‘Admin’ </div>
     </div>
 
 </body>
-</html>

@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
 <body>
     <div class="background-pic"></div>
 
@@ -26,7 +19,10 @@
 
                 <div class="form-group">
                     <label for="name"><b>Name <span>(FN & LN)</span></b></label>
-                    <input type="text" formControlName="name">
+
+                    <div class="input-cont">
+                        <input type="text" formControlName="name">
+                    </div>
 
                     <div class="alert" *ngIf="fc.name.invalid && (fc.name.dirty || fc.name.touched)">
                         <div *ngIf="fc.name.errors?.['required']">
@@ -40,7 +36,10 @@
 
                 <div class="form-group">
                     <label for="email"><b>Email</b></label>
-                    <input type="text" name="email" formControlName="email">
+
+                    <div class="input-cont">
+                        <input type="text" name="email" formControlName="email">
+                    </div>
 
                     <div class="alert" *ngIf="fc.email.invalid && (fc.email.dirty || fc.email.touched)">
                         <div *ngIf="fc.email.errors?.['required']">
@@ -54,7 +53,11 @@
 
                 <div class="form-group">
                     <label for="uname"><b>Username</b></label>
-                    <input type="text" name="uname" formControlName="uname">
+
+                    <div class="input-cont">
+                        <input type="text" name="uname" formControlName="uname">
+                    </div>
+
 
                     <div class="alert" *ngIf="fc.uname.invalid && (fc.uname.dirty || fc.uname.touched)">
                         <div *ngIf="fc.uname.errors?.['required']">
@@ -68,7 +71,11 @@
 
                 <div class="form-group">
                     <label for="pass"><b>Password</b></label>
-                    <input type="password" name="pass" formControlName="pass">
+
+                    <div class="input-cont">
+                        <input [type]="passType" name="pass" required>
+                        <span (click)="hideShowPass()" class="fa {{passEyeIcon}}"></span>
+                    </div>
 
                     
                     <div class="alert" *ngIf="fc.pass.invalid && (fc.pass.dirty || fc.pass.touched)">
@@ -80,7 +87,13 @@
 
                 <div class="form-group">      
                     <label for="con-pass"><b>Confirm Password</b></label>
-                    <input type="password" name="con-pass" formControlName="conPass">
+
+                    <div class="input-cont">
+                        <input [type]="conpassType" name="conpass" required>
+                        <span (click)="hideShowConPass()" class="fa {{conpassEyeIcon}}"></span>
+                    </div>
+
+
                     <div class="alert" *ngIf="fc.conPass.invalid && (fc.conPass.dirty || fc.conPass.touched)">
                         <div *ngIf="fc.conPass.errors?.['required']">
                             Confirm your Password.
@@ -94,11 +107,10 @@
                     <p>Creating your account and accepting the <span>Terms & Condition.</span> </p>
                 </label>
 
-                <button class="create-btn" type="submit" [disabled]="registrationFormHost.invalid" >Create Account</button>
+                <button class="create-btn" type="submit" (click)="onSubmit">Create Account</button>
 
             </form>
 
         </div>
     </div>
 </body>
-</html>

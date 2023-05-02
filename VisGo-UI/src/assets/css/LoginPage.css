@@ -87,42 +87,60 @@
     display: flex;
     flex-direction: column;
     z-index: 2;
-    margin: 10px 0 ;
     padding: 0rem 2rem;
 }
 
-.select:focus-within{
-    border-color: rgb(229,151,0);
-    border-radius: 12px;
+.sub-cont4 form{
+    display: flex;
+    flex-direction: column;
 }
 
+.form-group{
+    margin: 5px 0 ;
+}
+.input-cont{
+    background-color: var(--white);
+    display: flex;
+    padding: 10px 10px 10px 7px;
+    border: solid 2px var(--orange);
+}
+
+.input-cont div span{
+    cursor: pointer;
+}
 
 input[type=text], input[type=password], select {
     background-color: var(--white);
     width: 100%;
-    padding: 12px 12px;
-    margin: 8px 0 .5rem 0;
     display: inline-block;
-    border: 2px solid var(--orange);
-    border-radius: 10px;
+    border: none;
     box-sizing: border-box;
     font-size: 1rem;
 }
 
 input[type=text]:focus-visible, input[type=password]:focus-visible, select:focus-visible{
-    outline-color:rgb(229,151,0) ;
+    outline:none ;
 }
 
 select{
     cursor: pointer;
     width: 100%;
     background-color: var(--white);
-    border: solid 2px var(--orange);
+    border: none;
 }
 
+.alert{
+    background-color: rgba(255, 0, 0, 0.377);
+    padding: .1rem .2rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--white);
+    font-size: .7rem;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+}
 
 .login-admin,.forgotpass{
-    margin: 0 0 1.25rem 0;
+    margin: 0 0 8px 0;
     float: left;
     font-weight: 600;
     color: var(--grey);
@@ -180,12 +198,14 @@ select{
     display: none;
 }
 
+
+
 /* Medium */
 @media (min-width: 640px){
     .background-pic{
         display: none;
     }
-    .sub-cont1, .sub-cont2, .sub-cont3,.login-admin,.title-cont p{
+    .sub-cont1, .sub-cont2, .sub-cont3,.title-cont p{
         padding: 0rem 2rem;
     }
 
@@ -230,21 +250,20 @@ select{
         width: 50%;
         justify-content: center;
     }
-
+    
     .log-btn, .sign-btn{
         font-size: 1.5rem;
     }
 }
 
 /* large*/
-
 @media (min-width:1024px){
 
     .login-admin{
         cursor: pointer;
     }
 
-    .sub-cont1, .sub-cont2, .sub-cont3,.login-admin,.title-cont p {
+    .sub-cont1, .sub-cont2, .sub-cont3,.title-cont p {
         padding: 0rem 4rem;
     }
 
@@ -274,7 +293,6 @@ select{
 
 }
 
-
 @media (min-width:1024px ) and (max-height:950px){
     .title-cont p{
         font-size: 1.5rem;
@@ -284,7 +302,7 @@ select{
         font-size: 5rem;
     }
     
-    .sub-cont1, .sub-cont2, .sub-cont3,.login-admin,.title-cont p{
+    .sub-cont1, .sub-cont2, .sub-cont3,.title-cont p{
         padding: 0rem 4rem;
     }
 
