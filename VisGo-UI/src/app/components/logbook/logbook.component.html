@@ -1,0 +1,112 @@
+<div class="main-cont">
+    <app-header></app-header>
+
+    <div class="cont">
+        <div class="cont1">
+            <div class="monthordaily">
+                <button class="monthly-btn" (click)="selected()" [ngClass]="monthly ? 'active' : ''">MONTHLY</button>
+                <button class="daily-btn"  (click)="selected()" [ngClass]="daily ? 'active' : ''">DAILY</button>
+            </div>
+            <div class="date-picker-btn">
+                <img src="../../../assets/images/date-picker.png" alt="">
+                <p>April</p>
+                <img src="../../../assets/images/arrow-down.png" alt="">
+            </div>
+                
+            <div class="profile">
+                <img src="../../../assets/images/bell1.png" alt="">
+                <img src="../../../assets/images/user-profile.png" class="dropdown" routerLink="/">
+                <div class="profile-info">
+                    <h5>Loreto</h5>
+                    <h5><span>Host Account</span></h5>
+                </div>
+            </div>
+        </div>
+    
+        <div class="cont2">
+            <div class="title-cont">
+
+                <div class="title">
+                    <img src="../../../assets/images/list.png" alt="">
+                    <h2>Logbook</h2>
+                </div>
+                
+                <div class="create-invite-btn">
+                    <img src="../../../assets/images/plus.png" alt="">
+                    <h5>Create Invite</h5>
+                </div>
+
+                <div class="filter">
+                    <img src="../../../assets/images/filter.png" alt="">
+                    <h4>Filter</h4>
+                </div>
+            </div>
+    
+            <div class="contents-cont">
+    
+                <ul class="content">
+                    <li>#: <span> 1 </span> </li>
+                    <li>Visitor: <span> Barack Obama </span> </li>
+                    <li>Email: <span> Barackobama@gmail.com </span> </li>
+                    <li>Date: <span> April 24,2023 </span> </li>
+                    <li>Time: <span> 12:00nn </span> </li>
+                </ul>
+
+                <table class="table">
+                    <tr>
+                        <th>#</th>
+                        <th>Visitor</th>
+                        <th>Account ID</th>
+                        <th>Date</th>
+                        <th>Check In</th>
+                        <th>Check Out</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Barack Obama</td>
+                        <td>123456789</td>
+                        <td>04/14/23</td>
+                        <td>12:00pm</td>
+                        <td>12:00pm</td>
+                        <td>Complete</td>
+                        <td><span>View detail</span></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Barack Obama</td>
+                        <td>123456789</td>
+                        <td>04/14/23</td>
+                        <td>12:00pm</td>
+                        <td>12:00pm</td>
+                        <td>Complete</td>
+                        <td><span>View detail</span></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Barack Obama</td>
+                        <td>123456789</td>
+                        <td>04/14/23</td>
+                        <td>12:00pm</td>
+                        <td>12:00pm</td>
+                        <td>Complete</td>
+                        <td><span>View detail</span></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Barack Obama</td>
+                        <td>123456789</td>
+                        <td>04/14/23</td>
+                        <td>12:00pm</td>
+                        <td>12:00pm</td>
+                        <td>Complete</td>
+                        <td><span>View detail</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <app-navbar></app-navbar>
+</div>

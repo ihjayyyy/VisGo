@@ -1,0 +1,97 @@
+<body>  
+    <div class="background-pic"></div>
+    
+    <div class="title-cont">
+        <h1>Vis<span>Go</span></h1>
+        <img src="../../../assets/images/6347087.jpg" class="welcome-pic">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of t</p>
+    </div>
+
+    <div class="main-cont">
+
+        <div class="sub-cont1">
+            <h1>Choose Account Type</h1>
+        </div>
+
+        <div class="sub-cont2">
+            
+            <div class="visitor" >
+                <button class="visitor-btn" (click)="selected()" [ngClass]="visitor ? 'active' : ''">
+                    <img class="acc-icon" src="../../../assets/images/id-card.png">
+                   <h3>Visitor</h3>
+                </button>
+            </div>
+
+            <div class="host">
+                <button class="host-btn" (click)="selected()" [ngClass]="host ? 'active' : ''">
+                    <img class="acc-icon" src="../../../assets/images/host.png">
+                   <h3>Host</h3>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="sub-cont3">
+            <h1>LOG-IN AS A <span>{{accType}}</span></h1>
+        </div>
+        
+        <div class="sub-cont4">
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                <div class="form-group">
+                    <label for="property-name"><b>Select a Village/Building</b></label>
+                    <div class="input-cont">
+                        <select name="property" id="property">
+                            <optgroup label="Villages">
+                                <option value="Camella">Camella</option>
+                                <option value="Lancaster">Lancaster</option>
+                              </optgroup>
+                              <optgroup label="Buildings">
+                                <option value="Court Plaza Dormitory">Court Plaza Dormitory</option>
+                                <option value="CMDL's Dormitory">CMDL's Dormitory</option>
+                              </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="uname"><b>Username/Email</b></label>
+                    <div class="input-cont">
+                        <input type="text" name="uname" required formControlName="uname">
+                    </div>
+
+                    <div class="alert" *ngIf="fc.uname.invalid && (fc.uname.dirty || fc.uname.touched)">
+                        <div *ngIf="fc.uname.errors?.['required']">
+                            Username is required.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pass"><b>Password</b></label>
+                    <div class="input-cont">      
+                        <input [type]="type" name="pass" require formControlName="pass">
+                        <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+                    </div>
+                    <div class="alert" *ngIf="fc.pass.invalid && (fc.pass.dirty || fc.pass.touched)">
+                        <div *ngIf="fc.pass.errors?.['required']">
+                            Password is required.
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="forgotpass">Forgot Password?</div>
+
+                <div class="btns">
+                    <button class="log-btn" type="submit" (click)="onSubmit">Log-In</button>
+                    <button class="sign-btn" routerLink="/Register">Register</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="login-admin" routerLink="/AdminLogin">Click this to LOG-IN as a ‘Admin’ </div>
+    </div>
+
+</body>

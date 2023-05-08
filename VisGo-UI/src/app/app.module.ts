@@ -3,20 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { VisitorLogInComponent } from './components/visitor/visitor-log-in/visitor-log-in.component';
-import { HomeownerLogInComponent } from './components/homeowner/homeowner-log-in/homeowner-log-in.component';
-import { VisitorRegistrationComponent } from './components/visitor/visitor-registration/visitor-registration.component';
 import { AdminLogInComponent } from './components/admin/admin-log-in/admin-log-in.component';
-import { HomeownerRegistrationComponent } from './components/homeowner/homeowner-registration/homeowner-registration.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LogbookComponent } from './components/logbook/logbook.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VisitorRegistrationComponent,
-    VisitorLogInComponent,
-    HomeownerLogInComponent,
-    HomeownerRegistrationComponent,
     AdminLogInComponent,
+    LoginComponent,
+    RegisterComponent,
+    LogbookComponent,
+    HeaderComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
