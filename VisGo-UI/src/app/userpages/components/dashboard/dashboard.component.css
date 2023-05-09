@@ -1,0 +1,333 @@
+.main-cont{
+    height: 100%;
+}
+
+.contents-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top-cont{
+    padding: 90px 1rem 0 1rem ;
+}
+
+.content, .recent-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    border: 2px solid var(--black);
+    color: var(--black);
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    padding: 2rem 0;
+    width: 100%;
+    gap: 1rem;
+    box-shadow: 5px 5px 10px 0px #00000080;
+}
+
+.content h1{
+    font-size: 20vw;
+    line-height: 80%;
+}
+
+.content h5{
+    font-size: 4vw;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.content div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.calendar-img{
+    width: 8%;
+}
+
+.icon{
+    width: 13%;
+}
+
+.bottom-cont{
+    padding: 0 1rem 70px 1rem;
+}
+
+.recent-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.recent-title h1{
+    font-size: 8vw;
+}
+
+.recent-img{
+    width: 12%;
+}
+
+.table{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+table{
+    border-collapse: collapse;
+    width: 90%;
+    text-align: center;
+    border: 1px solid var(--black);
+}
+
+table th, table td{
+    padding: 8px;
+}
+
+table th{
+    font-size: 4.5vw;
+    border-bottom: 1px solid var(--black);
+}
+
+table td{
+    font-size: 4vw;
+}
+
+.name{
+    border-right: 1px solid var(--black);
+}
+
+.cont,.email{
+    display: none;
+}
+
+@media (min-width: 640px){
+    hr{
+        display: none;
+    }
+
+    .contents-cont{
+        height: 100%;
+    }
+    .main-cont{
+        padding: 0 0 0 20%;
+        overflow: hidden;
+    }
+    .top-cont{
+        display: flex;
+        flex-direction: row;    
+        padding: 0px 40px 0 40px;
+        gap: 1rem;
+    }
+    .content{
+        margin: 0 0 1.5rem 0;
+        padding: 2rem 1rem;
+    }
+
+    .icon{
+        width: 22%;
+    }
+
+    .calendar-img{
+        width: 16%;
+    }
+    .content h1{
+        font-size: 6vw;
+    }
+
+    .content h5{
+        font-size: 1.2vw;
+        letter-spacing: 0;
+    }
+
+    .recent-title h1{
+        font-size: 3vw;
+    }
+
+    .recent-img{
+        width: 6%;
+    }
+
+    .table{
+        height: 90%;
+        overflow-y: auto;
+    }
+
+    table{
+        width: 95%;
+    }
+    .table::-webkit-scrollbar{
+        width: 4px;
+    }
+    .table::-webkit-scrollbar-thumb {
+        background-color: var(--black);    /* color of the scroll thumb */
+        border: 1px solid var(--white);
+        border-radius: 20px;       /* roundness of the scroll thumb */
+      }
+    
+    table th{
+        font-size: 2vw;
+    }
+
+    table td{
+        font-size: 1.5vw;
+    }
+
+    .email{
+        display: table-cell;
+        border-right: 1px solid var(--black);
+    }
+
+    .bottom-cont{
+        padding: 0 40px 20px 40px;
+        height: 55%;
+    }
+
+    .recent-content{
+        margin: 0;
+        padding: 1rem 0;
+        height: 90%;
+        gap: 1rem;
+    }
+    .cont{
+        display: flex;
+        padding: 80px 40px 0 40px;
+        margin-bottom: 20px;
+        justify-content: space-between;
+    }
+
+    .profile{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width:30%;
+        gap: .5rem;
+    }
+    .profile img{
+        width: 15%;
+    }
+
+    .profile h5{
+        font-size: 1.5vw;
+    }
+
+    .dropdown{
+        cursor: pointer;
+    }
+
+    .profile h5 span{
+        color: var(--grey);
+    }
+
+    .create-invite-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        background-color: var(--white);
+        border: 2px solid var(--black);
+        color: var(--black);
+        padding: .5rem 0;
+        cursor: pointer;
+        width: 30%;
+        border-radius: 20px;
+    }
+
+    .create-invite-btn:hover{
+        background-color: var(--orange);
+    }
+    .create-invite-btn img{
+        width: 13%;
+    }
+
+    .create-invite-btn h5{
+        font-size: 2vw;
+    }
+}
+
+
+@media (min-width:1024px) {
+    .create-invite-btn{
+        width: 22%;
+    }
+    .create-invite-btn h5{
+        font-size: 1.5vw;
+    }
+
+    .create-invite-btn img{
+        width: 13%;
+    }
+
+    .profile{
+        width: 20%;
+    }
+
+    .content h1{
+        font-size: 5vw;
+    }
+
+    .content h5, .profile h5{
+        font-size: 1vw;
+    }
+
+    .calendar-img{
+        width: 10%;
+    }
+
+    .icon{
+        width: 16%;
+    }
+
+}
+
+@media (min-width:1024px) and (max-height:950px){
+
+    .create-invite-btn{
+        width: 20%;
+    }
+    .create-invite-btn h5{
+        font-size: 1.3vw;
+    }
+
+    .create-invite-btn img{
+        width: 11%;
+    }
+    .cont{
+        padding-top: 30px ;
+    }
+    .content{
+        padding: 1rem .5rem;
+    }
+
+    .content h1{
+        font-size: 4.5vw;
+    }
+
+    .recent-title h1{
+        font-size: 2vw;
+    }
+
+    .recent-img{
+        width: 4%;
+    }
+
+    .bottom-cont{
+        height: 50%;
+    }
+
+    table th{
+        font-size: 1.5vw;
+    }
+
+    table td{
+        font-size: 1vw;
+    }
+
+}

@@ -4,7 +4,7 @@ import { UserPagesComponent } from './userpages.component';
 import { RouterModule } from '@angular/router';
 import {  UserPagesRoutingModule } from './userpages-routing.module';
 import { HeaderComponent } from '../shared/components/header/header.component';
-import { NavbarComponent } from '../shared/navbar/navbar.component';
+import { NavbarComponent } from '../shared/components/navbar/navbar.component';
 import { LogbookComponent } from './components/logbook/logbook.component';
 import { ScheduledVisitsComponent } from './components/scheduled-visits/scheduled-visits.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -30,4 +30,4 @@ import { ProfileComponent } from './components/profile/profile.component';
     UserPagesRoutingModule,
   ]
 })
-export class UserPagesModule { }
+export class UserPagesModule{ }

@@ -76,10 +76,12 @@ input[type="month"]{
 }
 
 .cont2{
-    margin: 1rem 1rem 0 1rem;
+    margin: 1rem 1rem 0rem 1rem;
+    padding-bottom: 70px;
+}
+
+.contents-cont{
     border: solid var(--black) 1px;
-    height: 74%;
-    margin-bottom: 80px;
 }
 
 .title-cont{
@@ -89,9 +91,7 @@ input[type="month"]{
     justify-content: space-evenly;
     padding: .5rem;
     border: solid var(--black) 1px;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
+    border-bottom: none;
 }
 
 .title{
@@ -120,11 +120,6 @@ input[type="month"]{
 
 .filter h4{
     font-size: 5vw;
-}
-
-.contents-cont{
-    height: 90%;
-    overflow-y: auto;
 }
 
 .contents-cont::-webkit-scrollbar{
@@ -161,10 +156,10 @@ input[type="month"]{
     .cont1{
         flex-direction: row;
         align-items: center;
-        padding: 80px 20px 0 20px;
+        padding: 80px 40px 0 40px;
     }
     .cont2{
-        margin: 20px;
+        margin: 20px 40px;
         height: 80%;
     }
 
@@ -187,12 +182,17 @@ input[type="month"]{
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        background-color: var(--black);
-        color: #fff;
+        background-color: var(--white);
+        border: solid 2px var(--black);
+        color: var(--black);
         padding: .5rem 0;
         cursor: pointer;
         width: 100%;
         border-radius: 20px;
+    }
+
+    .create-invite-btn:hover{
+        background-color: var(--orange);
     }
 
     .title img, .date-picker-btn img{
@@ -203,7 +203,6 @@ input[type="month"]{
     }
     .create-invite-btn img{
         width: 13%;
-        filter: brightness(0) invert(1);
     }
 
     .create-invite-btn h5{
@@ -295,6 +294,7 @@ input[type="month"]{
     }
     .cont2{
         height: 82%;
+        padding-bottom: 0;
     }
 
     .title img,.date-picker-btn img, .profile img{
@@ -310,7 +310,6 @@ input[type="month"]{
     }
     .create-invite-btn img{
         width: 13%;
-        filter: brightness(0) invert(1);
     }
 
     .create-invite-btn h5{
@@ -347,5 +346,9 @@ input[type="month"]{
     }
     .create-invite-btn {
         width: 25%;
+    }
+
+    .cont2{
+        height: 80%;
     }
 }
