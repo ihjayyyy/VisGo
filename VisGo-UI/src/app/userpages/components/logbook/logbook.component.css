@@ -9,14 +9,15 @@
 .cont1{
     padding: 90px 1rem 0 1rem;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: .5rem;
 }
 
 .monthordaily{
     display: flex;
-    width: 60%;
+    width: 100%;
 }
 
 .daily-btn, .monthly-btn{
@@ -45,11 +46,23 @@
     color: var(--white);
 }
 
+
+input[type="month"]{
+    font-weight: 600;
+    padding: .5rem;
+    background-color: var(--white);
+    border: 2px solid var(--black);
+    text-align: center;
+    font-size: 4vw;
+    width: 100%;
+    border-radius: 8px;
+}
+
 .date-picker-btn{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 100%;
     gap: .5rem;
 }
 
@@ -146,6 +159,8 @@
     }
 
     .cont1{
+        flex-direction: row;
+        align-items: center;
         padding: 80px 20px 0 20px;
     }
     .cont2{
@@ -266,10 +281,18 @@
         font-size: 1.5vw;
     }
 
+    input[type=month]{
+        font-size: 1.5vw;
+        width: 75%;
+        padding: .2rem;
+    }
+
 }
 
 @media (min-width:1024px) {
-
+    .col-1{
+        border-right: 1px solid var(--grey);
+    }
     .cont2{
         height: 82%;
     }
@@ -283,7 +306,7 @@
     } 
 
     .create-invite-btn {
-        width: 40%;
+        width: 30%;
     }
     .create-invite-btn img{
         width: 13%;
@@ -291,7 +314,7 @@
     }
 
     .create-invite-btn h5{
-        font-size: 1.5vw;
+        font-size: 1.2vw;
     }
 
     .title h2{
@@ -322,5 +345,7 @@
     .cont1{
         padding: 46px 20px 0 20px;
     }
-
+    .create-invite-btn {
+        width: 25%;
+    }
 }

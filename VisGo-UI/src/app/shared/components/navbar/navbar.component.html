@@ -6,27 +6,27 @@
     </div>
 
     <div class="buttons-cont">
-        <div class="button" (click)="Dashselected()" [ngClass]="dashboard ? 'clicked': ''">
+        <div class="button" (click)="Dashselected()" [ngClass]="dashboard ? 'clicked': ''" routerLink="/userPages/dashboard">
             <img src="../../../assets/images/dashboard.png" alt="">
             <p>Dashboard</p>
         </div>
-        <div class="button" (click)="Logselected()" [ngClass]="logbook ? 'clicked': ''">
+        <div class="button" (click)="Logselected()" [ngClass]="logbook ? 'clicked': ''" routerLink="/userPages/logbook">
             <img src="../../../assets/images/logbook.png" alt="">
             <p>Logbook</p>
         </div>
-        <div class="button" (click)="Schedselected()" [ngClass]="schedule ? 'clicked': ''">
+        <div class="button" (click)="Schedselected()" [ngClass]="schedule ? 'clicked': ''" routerLink="/userPages/scheduled">
             <img src="../../../../assets/images/schedule.png" alt="">
             <p>Schedule</p>
         </div>
-        <div class="button" (click)="Pendselected()" [ngClass]="pending ? 'clicked': ''">
+        <div class="button" (click)="Pendselected()" [ngClass]="pending ? 'clicked': ''" routerLink="/userPages/pending">
             <img src="../../../assets/images/pending.png" alt="">
             <p>Pending </p>
         </div>
-        <div class="button" (click)="Locselected()" [ngClass]="location ? 'clicked': ''">
+        <div class="button" (click)="Locselected()" [ngClass]="location ? 'clicked': ''" routerLink="/userPages/location">
             <img src="../../../assets/images/location.png" alt="">
             <p>Location</p>
         </div>
-        <div class="button" (click)="Profselected()" [ngClass]="profile ? 'clicked': ''">
+        <div class="button" (click)="Profselected()" [ngClass]="profile ? 'clicked': ''" routerLink="/userPages/profile">
             <img src="../../../assets/images/user.png" alt="">
             <p>Profile</p>
         </div>

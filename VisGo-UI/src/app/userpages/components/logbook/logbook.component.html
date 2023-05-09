@@ -1,5 +1,5 @@
+
 <div class="main-cont">
-    <app-header></app-header>
 
     <div class="cont">
         <div class="cont1">
@@ -7,10 +7,9 @@
                 <button class="monthly-btn" (click)="selected()" [ngClass]="monthly ? 'active' : ''">MONTHLY</button>
                 <button class="daily-btn"  (click)="selected()" [ngClass]="daily ? 'active' : ''">DAILY</button>
             </div>
+
             <div class="date-picker-btn">
-                <img src="../../../assets/images/date-picker.png" alt="">
-                <p>April</p>
-                <img src="../../../assets/images/arrow-down.png" alt="">
+                <input type="month" value="2023-05" >
             </div>
                 
             <div class="profile">
@@ -54,7 +53,7 @@
 
                 <table class="table">
                     <tr>
-                        <th>#</th>
+                        <th class="col-1">#</th>
                         <th>Visitor</th>
                         <th>Account ID</th>
                         <th>Date</th>
@@ -63,7 +62,7 @@
                         <th>Status</th>
                     </tr>
                     <tr>
-                        <td>1</td>
+                        <td class="col-1">1</td>
                         <td>Barack Obama</td>
                         <td>123456789</td>
                         <td>04/14/23</td>
@@ -73,7 +72,7 @@
                         <td><span>View detail</span></td>
                     </tr>
                     <tr>
-                        <td>1</td>
+                        <td class="col-1">1</td>
                         <td>Barack Obama</td>
                         <td>123456789</td>
                         <td>04/14/23</td>
@@ -83,7 +82,7 @@
                         <td><span>View detail</span></td>
                     </tr>
                     <tr>
-                        <td>1</td>
+                        <td class="col-1">1</td>
                         <td>Barack Obama</td>
                         <td>123456789</td>
                         <td>04/14/23</td>
@@ -93,7 +92,7 @@
                         <td><span>View detail</span></td>
                     </tr>
                     <tr>
-                        <td>1</td>
+                        <td class="col-1">1</td>
                         <td>Barack Obama</td>
                         <td>123456789</td>
                         <td>04/14/23</td>
@@ -106,7 +105,5 @@
             </div>
         </div>
     </div>
-    
 
-    <app-navbar></app-navbar>
 </div>
