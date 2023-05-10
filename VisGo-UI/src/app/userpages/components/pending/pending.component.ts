@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./pending.component.css']
 })
 export class PendingComponent {
+  daily: boolean = false;
+  monthly: boolean = true;
 
+  selected(){
+    this.daily = !this.daily;
+    this.monthly = !this.monthly;
+  }
 }

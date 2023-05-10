@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./scheduled-visits.component.css']
 })
 export class ScheduledVisitsComponent {
+  daily: boolean = false;
+  monthly: boolean = true;
 
+  selected(){
+    this.daily = !this.daily;
+    this.monthly = !this.monthly;
+  }
 }

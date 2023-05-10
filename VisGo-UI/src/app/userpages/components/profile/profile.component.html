@@ -1,0 +1,76 @@
+
+
+<div class="main-cont">
+
+    <div class="sub-cont">
+        <div class="cont1">
+            <div class="profile">
+                <img src="../../../../assets/images/plus.png" alt="">
+                <img src="../../../assets/images/bell1.png" alt="">
+                <img src="../../../assets/images/user-profile.png" class="dropdown" routerLink="/">
+                <div class="profile-info">
+                    <h5>Loreto</h5>
+                    <h5><span>Host Account</span></h5>
+                </div>
+            </div>            
+        </div>
+
+        <div class="cont2">
+            <div class="title-cont">
+                <div class="title">
+                    <img src="../../../assets/images/user.png" alt="">
+                    <h2>Account Profile</h2>
+                </div>
+            </div>
+
+            <div class="contents-cont">
+
+                <div class="prof-cont1">
+                    
+                    <div class="prof-pic">
+                        <img src="../../../../assets/images/user-profile.png" alt="">
+                        <div class="basic-details">
+                            <p>Host's Account</p>
+                            <p>Ejay Olivar</p>
+                            <p>123456789</p>
+                        </div>
+                    </div>
+
+                    <div class="edit-profile">
+                        <img src="../../../../assets/images/edit-tool.png" alt="">
+                    </div>
+                </div>
+                
+                <ul class="content">
+                    <div class="info">
+                        <li>Name: <span> Ejay Olivar </span> </li>
+                        <li>Account ID: <span> 123456789 </span> </li>
+                        <li>Email: <span> ejayolivar123@gmail.com </span> </li>
+                        <li>Phone Number: <span> 12345 Santa Cruz 
+                            Street Kawit, Cavite </span> </li>
+                    </div>
+                    <div class="info">
+                        <li>Gender: <span> Male</span> </li>
+                        <li>Age: <span> 22 </span> </li>
+                        <li>Date of Birth: <span> 09/12/200</span> </li>
+                    </div>
+
+                </ul>
+
+                <div class="id-cont">
+                    <p>ID Picture Presented:</p>
+
+
+                    <div class="input-img">
+                        <span class="drop-title">Drop files here</span>
+                        or
+                        <input type="file" (change)="onselectFile($event)">
+                        <img [src]="url" alt="">
+                        <input type="submit">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

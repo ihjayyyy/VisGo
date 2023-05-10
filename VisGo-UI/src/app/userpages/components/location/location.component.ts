@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./location.component.css']
 })
 export class LocationComponent {
+  daily: boolean = false;
+  monthly: boolean = true;
 
+  selected(){
+    this.daily = !this.daily;
+    this.monthly = !this.monthly;
+  }
 }

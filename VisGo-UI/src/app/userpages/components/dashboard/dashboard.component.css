@@ -2,13 +2,13 @@
     height: 100%;
 }
 
-.contents-cont{
+.sub-cont{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.top-cont{
+.cont2{
     padding: 90px 1rem 0 1rem ;
 }
 
@@ -54,7 +54,7 @@
     width: 13%;
 }
 
-.bottom-cont{
+.cont3{
     padding: 0 1rem 70px 1rem;
 }
 
@@ -104,7 +104,7 @@ table td{
     border-right: 1px solid var(--black);
 }
 
-.cont,.email{
+.cont,.email,.profile{
     display: none;
 }
 
@@ -113,14 +113,14 @@ table td{
         display: none;
     }
 
-    .contents-cont{
+    .sub-cont{
         height: 100%;
     }
     .main-cont{
         padding: 0 0 0 20%;
         overflow: hidden;
     }
-    .top-cont{
+    .cont2{
         display: flex;
         flex-direction: row;    
         padding: 0px 40px 0 40px;
@@ -185,9 +185,9 @@ table td{
         border-right: 1px solid var(--black);
     }
 
-    .bottom-cont{
+    .cont3{
         padding: 0 40px 20px 40px;
-        height: 55%;
+        height: 57%;
     }
 
     .recent-content{
@@ -196,22 +196,23 @@ table td{
         height: 90%;
         gap: 1rem;
     }
-    .cont{
+    .cont1{
         display: flex;
         padding: 80px 40px 0 40px;
         margin-bottom: 20px;
-        justify-content: space-between;
+        justify-content: flex-end;
     }
 
     .profile{
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        width:30%;
-        gap: .5rem;
+        width: 30%;
+        gap:.5rem;
     }
+
     .profile img{
-        width: 15%;
+        width: 12%;
     }
 
     .profile h5{
@@ -226,47 +227,12 @@ table td{
         color: var(--grey);
     }
 
-    .create-invite-btn{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        background-color: var(--white);
-        border: 2px solid var(--black);
-        color: var(--black);
-        padding: .5rem 0;
-        cursor: pointer;
-        width: 30%;
-        border-radius: 20px;
-    }
-
-    .create-invite-btn:hover{
-        background-color: var(--orange);
-    }
-    .create-invite-btn img{
-        width: 13%;
-    }
-
-    .create-invite-btn h5{
-        font-size: 2vw;
-    }
 }
 
 
 @media (min-width:1024px) {
-    .create-invite-btn{
-        width: 22%;
-    }
-    .create-invite-btn h5{
-        font-size: 1.5vw;
-    }
-
-    .create-invite-btn img{
-        width: 13%;
-    }
-
     .profile{
-        width: 20%;
+        width: 25%;
     }
 
     .content h1{
@@ -299,7 +265,7 @@ table td{
     .create-invite-btn img{
         width: 11%;
     }
-    .cont{
+    .cont1{
         padding-top: 30px ;
     }
     .content{
@@ -318,7 +284,7 @@ table td{
         width: 4%;
     }
 
-    .bottom-cont{
+    .cont3{
         height: 50%;
     }
 

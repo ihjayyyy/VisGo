@@ -1,0 +1,288 @@
+.main-cont{
+    height: 100%;
+}
+
+.sub-cont{
+    height: 100%;
+}
+
+.cont1{
+    padding: 90px 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: .5rem;
+}
+
+.profile{
+    display: none;
+}
+
+.cont2{
+    margin: 1rem 1rem 0rem 1rem;
+    padding-bottom: 70px;
+}
+
+.title-cont{
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    padding: .5rem;
+    border: solid var(--black) 1px;
+    border-bottom: none;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 80%;
+}
+
+.title h2{
+    font-size: 6vw;
+}
+
+.title img{
+    width:15% ;
+}
+
+.contents-cont{
+    border: solid var(--black) 1px;
+}
+
+.prof-cont1{
+    display: flex;
+    justify-content:space-between;
+    padding: .8rem .8rem 0 .8rem;
+}
+.prof-pic{
+    width: 90%;
+    display: flex;
+    gap: .5rem;
+}
+.prof-pic img{
+    width: 22%;
+}
+
+.basic-details{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    font-size: 4vw;
+    font-weight: 600;
+}
+
+.edit-profile{
+    width: 12%;
+}
+
+.edit-profile img{
+    width: 100%;
+    opacity: 50%;
+}
+
+.content{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: .8rem;
+    gap: .8rem;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.content li{
+    margin: .1rem 0;
+    font-size: 5vw;
+    font-weight: 600;
+    text-align: justify;
+}
+
+.content li span{
+    font-weight: 400;
+}
+
+.id-cont{
+    padding: 0 .8rem .8rem .8rem;
+    font-size: 5vw;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.id-cont img{
+   width: 100%;
+   mix-blend-mode: darken;
+}
+
+.input-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    border: 2px dashed var(--black);
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+    gap: .5rem;
+}
+
+input[type=file]{
+    width: 100%;
+}
+input[type=file]::file-selector-button,input[type=submit]{
+    background-color: var(--white);
+    padding: .5rem;
+    border-radius: 10px;
+    border: solid 2px var(--black);
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+    font-size: 3vw;
+    font-weight: 600;
+}
+
+input[type=file]::file-selector-button:hover , input[type=submit]:hover {
+    background: var(--orange);
+  }
+
+  @media (min-width: 640px) {
+    .main-cont{
+        padding: 0 0 0 20%;
+    }
+
+    .cont1{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 80px 40px 0 40px;
+    }
+    .cont2{
+        margin: 20px 40px;
+        padding-bottom: 50px;
+    }
+
+    .title-cont{
+        padding: .7rem;
+        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .title img{
+        width: 8%;
+    }
+    
+    .profile{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 30%;
+        gap:.5rem;
+    }
+    .profile img{
+        width: 12%;
+    }
+
+    .dropdown{
+        cursor: pointer;
+    }
+
+    .profile h5 span{
+        color: var(--grey);
+    }
+
+    .title h2{
+        font-size: 3vw;
+    }
+
+    .profile h5{
+        font-size: 1.5vw;
+    }
+
+    .prof-cont1{
+        padding: 1rem;
+    }
+
+    .content, .id-cont{
+        padding: 0rem 1rem .8rem 1rem;
+    }
+    
+    .basic-details{
+        font-size: 1.8vw;
+    }
+
+    .prof-pic img{
+        width: 12%;
+    }
+
+    .edit-profile{
+        width: 8%;
+    }
+
+    .content li, .id-cont{
+        font-size: 2.5vw;
+    }
+
+    input[type=file]::file-selector-button,input[type=submit]{
+        font-size: 1.5vw;
+    }
+
+    .id-cont img{
+        width: 40%;
+    }
+    .content{
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .content li{
+        text-align: left;
+    }
+
+    .info{
+        text-align: right;
+    }
+}
+
+@media (min-width:1024px) {
+    .col-1{
+        border-right: 1px solid var(--grey);
+    }
+
+    .cont2{
+        padding-bottom: 50px;
+    }
+
+    .profile img{
+        width: 10%;
+    }
+
+    .title img{
+        width: 6%;
+    } 
+
+    .title h2{
+        font-size: 2.5vw;
+    }
+
+    .content{
+        gap: 2rem;
+    }
+
+    .prof-pic img{
+        width: 10%;
+    }
+
+    .content li, .id-cont{
+        font-size: 2.2vw;
+    }
+
+}
