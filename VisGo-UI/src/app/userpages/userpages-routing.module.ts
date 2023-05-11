@@ -8,6 +8,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PendingComponent } from './components/pending/pending.component';
 import { LocationComponent } from './components/location/location.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { CreateInviteComponent } from './components/create-invite/create-invite.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,8 @@ const routes: Routes = [
       {path:'scheduled',component: ScheduledVisitsComponent},
       {path:'pending', component:PendingComponent},
       {path:'location', component:LocationComponent},
-      {path:'profile', component:ProfileComponent}
+      {path:'profile', component:ProfileComponent},
+      {path:'create-invite', component:CreateInviteComponent}
     ]
   }
 ];

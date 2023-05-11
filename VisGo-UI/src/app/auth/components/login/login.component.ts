@@ -55,7 +55,6 @@ export class LoginComponent {
     this.accType = 'HOST';
 
   }
-
   onSubmit() {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);

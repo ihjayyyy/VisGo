@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-logbook',
@@ -6,11 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./logbook.component.css']
 })
 export class LogbookComponent {
+  public currentDate = this.datePipe.transform(new Date(),"yyyy-MM-dd")
+  public currentMonth = this.datePipe.transform(new Date(),"yyyy-MM")
   daily: boolean = false;
   monthly: boolean = true;
 
-  selected(){
-    this.daily = !this.daily;
-    this.monthly = !this.monthly;
+  Dselected() {
+    this.daily = true;
+    this.monthly = false;
   }
+
+  Mselected() {
+    this.monthly = true;
+    this.daily = false;
+  }
+  
+constructor(private datePipe:DatePipe){}
 }

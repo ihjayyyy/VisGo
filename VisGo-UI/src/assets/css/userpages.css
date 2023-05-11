@@ -47,7 +47,7 @@
 }
 
 
-input[type="month"]{
+input[type="month"], input[type="date"]{
     font-weight: 600;
     padding: .5rem;
     background-color: var(--white);
@@ -56,6 +56,10 @@ input[type="month"]{
     font-size: 4vw;
     width: 100%;
     border-radius: 8px;
+}
+
+.hide{
+    display: none;
 }
 
 .date-picker-btn{
@@ -188,6 +192,10 @@ input[type="month"]{
         display: block;
         font-size: 2vw;
     }
+
+    .daily-btn, .monthly-btn{
+        padding: .27rem .27rem;
+    }
     .monthordaily{
         width: 30%;
     }
@@ -253,10 +261,10 @@ input[type="month"]{
         font-size: 1.5vw;
     }
 
-    input[type=month]{
-        font-size: 1.5vw;
+    input[type=month], input[type="date"]{
+        font-size: 1.3vw;
         width: 75%;
-        padding: .2rem;
+        padding: .1rem;
     }
 
 }

@@ -6,48 +6,51 @@
     </div>
 
     <div class="buttons-cont">
-        <div class="button" (click)="Dashselected()" [ngClass]="dashboard ? 'clicked': ''" routerLink="/userPages/dashboard">
+        <div class="button" routerLink="/userPages/dashboard" routerLinkActive="clicked">
             <img src="../../../assets/images/dashboard.png" alt="">
             <p>Dashboard</p>
         </div>
-        <div class="button" (click)="Logselected()" [ngClass]="logbook ? 'clicked': ''" routerLink="/userPages/logbook">
+        <div class="button" routerLinkActive="clicked" routerLink="/userPages/logbook">
             <img src="../../../assets/images/logbook.png" alt="">
             <p>Logbook</p>
         </div>
-        <div class="button" (click)="Schedselected()" [ngClass]="schedule ? 'clicked': ''" routerLink="/userPages/scheduled">
+        <div class="button" routerLinkActive="clicked" routerLink="/userPages/scheduled">
             <img src="../../../../assets/images/schedule.png" alt="">
             <p>Schedule</p>
         </div>
-        <div class="button" (click)="Pendselected()" [ngClass]="pending ? 'clicked': ''" routerLink="/userPages/pending">
+        <div class="button" routerLinkActive="clicked" routerLink="/userPages/pending">
             <img src="../../../assets/images/pending.png" alt="">
             <p>Pending </p>
         </div>
-        <div class="button" (click)="Locselected()" [ngClass]="location ? 'clicked': ''" routerLink="/userPages/location">
+        <div class="button" routerLinkActive="clicked" routerLink="/userPages/location">
             <img src="../../../assets/images/location.png" alt="">
             <p>Location</p>
         </div>
-        <div class="button" (click)="Profselected()" [ngClass]="profile ? 'clicked': ''" routerLink="/userPages/profile">
+        <div class="button" routerLinkActive="clicked" routerLink="/userPages/profile">
             <img src="../../../assets/images/user.png" alt="">
             <p>Profile</p>
         </div>
     </div>
 
-    <div class="img" [ngClass]=" dashboard ? 'unhide': ''">
+    <div class="img" routerLink="/userPages/dashboard" routerLinkActive="unhide">
         <img src="../../../assets/images/dashboard-design.jpg" alt="">
     </div>
-    <div class="img" [ngClass]=" logbook ? 'unhide': ''">
+    <div class="img" routerLink="/userPages/logbook" routerLinkActive="unhide">
         <img src="../../../assets/images/logbook-design.jpg" alt="">
     </div>
-    <div class="img" [ngClass]=" schedule? 'unhide': ''">
+    <div class="img" routerLink="/userPages/scheduled" routerLinkActive="unhide">
         <img src="../../../assets/images/schedule-design.jpg" alt="">
     </div>
-    <div class="img" [ngClass]=" pending ? 'unhide': ''">
+    <div class="img" routerLink="/userPages/pending" routerLinkActive="unhide">
         <img src="../../../assets/images/pending-design.jpg" alt="">
     </div>
-    <div class="img" [ngClass]=" location ? 'unhide': ''">
+    <div class="img" routerLink="/userPages/location" routerLinkActive="unhide">
         <img src="../../../assets/images/location-design.jpg" alt="">
     </div>
-    <div class="img" [ngClass]=" profile ? 'unhide': ''">
+    <div class="img" routerLink="/userPages/profile" routerLinkActive="unhide">
         <img src="../../../assets/images/profile-design.jpg" alt="">
+    </div>
+    <div class="img" routerLink="/userPages/create-invite" routerLinkActive="unhide">
+        <img src="../../../assets/images/createinvite.jpg" alt="">
     </div>
 </div>

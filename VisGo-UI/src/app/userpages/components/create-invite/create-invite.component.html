@@ -1,0 +1,127 @@
+
+<div class="main-cont">
+
+    <div class="sub-cont">
+        <div class="cont1">
+            <div class="title-cont">
+                <h1>Schedule a Visit</h1>
+                <h5>You will be sent a confirmation notification when your reservation has been confirmed</h5>
+            </div>
+
+            <div class="contents-cont">
+                <h1>Personal Details of Visitor</h1>
+
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                    <div class="form-group">
+                        <label for="visName"><b>Name of Visitor</b></label>
+                        <div class="input-cont">
+                            <input type="text" name="visName" required formControlName="visName">
+                        </div>
+    
+                        <div class="alert" *ngIf="fc.visName.invalid && (fc.visName.dirty || fc.visName.touched)">
+                            <div *ngIf="fc.visName.errors?.['required']">
+                                This is required.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="visEmail"><b>Email of Visitor</b></label>
+                        <div class="input-cont">
+                            <input type="text" name="visEmail" required formControlName="visEmail">
+                        </div>
+    
+                        <div class="alert" *ngIf="fc.visEmail.invalid && (fc.visEmail.dirty || fc.visEmail.touched)">
+                            <div *ngIf="fc.visEmail.errors?.['required']">
+                                This is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visPhone"><b>Phone of Visitor</b></label>
+                        <div class="input-cont">
+                            <input type="text" name="visPhone" required formControlName="visPhone">
+                        </div>
+    
+                        <div class="alert" *ngIf="fc.visPhone.invalid && (fc.visPhone.dirty || fc.visPhone.touched)">
+                            <div *ngIf="fc.visPhone.errors?.['required']">
+                                This is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visAccID"><b>Account ID of Visitor</b></label>
+                        <div class="input-cont">
+                            <input type="text" name="visAccID" required formControlName="visAccID">
+                        </div>
+    
+                        <div class="alert" *ngIf="fc.visAccID.invalid && (fc.visAccID.dirty || fc.visAccID.touched)">
+                            <div *ngIf="fc.visAccID.errors?.['required']">
+                                This is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visPhone"><b>Phone of Visitor</b></label>
+                        <div class="input-cont">
+                            <input type="text" name="visPhone" required formControlName="visPhone">
+                        </div>
+    
+                        <div class="alert" *ngIf="fc.visPhone.invalid && (fc.visPhone.dirty || fc.visPhone.touched)">
+                            <div *ngIf="fc.visPhone.errors?.['required']">
+                                This is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date"><b>Date of Visit</b></label>
+                        <div class="input-cont">
+                            <input type="text" name="date" required formControlName="date">
+                        </div>
+    
+                        <div class="alert" *ngIf="fc.date.invalid && (fc.date.dirty || fc.date.touched)">
+                            <div *ngIf="fc.date.errors?.['required']">
+                                This is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time"><b>Time of Visit</b></label>
+                        <div class="input-cont">
+                            <input type="text" name="time" required formControlName="time">
+                        </div>
+    
+                        <div class="alert" *ngIf="fc.time.invalid && (fc.time.dirty || fc.time.touched)">
+                            <div *ngIf="fc.time.errors?.['required']">
+                                This is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="purpose"><b>Purpose of Visit</b></label>
+                        <div class="input-cont">
+                            <input type="text" name="purpose" required formControlName="purpose">
+                        </div>
+    
+                        <div class="alert" *ngIf="fc.purpose.invalid && (fc.purpose.dirty || fc.purpose.touched)">
+                            <div *ngIf="fc.purpose.errors?.['required']">
+                                This is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btns">
+                        <button class="submit-btn" type="submit" (click)="onSubmit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

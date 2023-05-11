@@ -4,12 +4,13 @@
     <div class="sub-cont">
         <div class="cont1">
             <div class="monthordaily">
-                <button class="monthly-btn" (click)="selected()" [ngClass]="monthly ? 'active' : ''">MONTHLY</button>
-                <button class="daily-btn"  (click)="selected()" [ngClass]="daily ? 'active' : ''">DAILY</button>
+                <button class="monthly-btn" (click)="Mselected()" [ngClass]="monthly ? 'active' : ''">MONTHLY</button>
+                <button class="daily-btn"  (click)="Dselected()" [ngClass]="daily ? 'active' : ''">DAILY</button>
             </div>
 
             <div class="date-picker-btn">
-                <input type="month" value="2023-05" >
+                <input type="month" value="{{currentMonth}}" [ngClass]="monthly? '' :'hide'">
+                <input type="date" value="{{currentDate}}"  [ngClass]="daily? '' :'hide'">
             </div>
                 
             <div class="profile">
