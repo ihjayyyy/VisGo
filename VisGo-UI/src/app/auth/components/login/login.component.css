@@ -146,6 +146,8 @@ select{
     border: none;
 }
 
+
+
 .alert{
     background-color: rgba(255, 0, 0, 0.377);
     padding: .1rem .2rem;

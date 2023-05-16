@@ -1,0 +1,8 @@
+@import url(../details-of-visits/details-of-visits.component.css);
+.content img{
+    width: 70%;
+}
+.col2{
+    align-items: center;
+    justify-content: center;
+}

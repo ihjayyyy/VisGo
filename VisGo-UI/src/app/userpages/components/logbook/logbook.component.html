@@ -14,7 +14,7 @@
             </div>
                 
             <div class="profile">
-                <img src="../../../../assets/images/plus.png" alt="">
+                <img src="../../../../assets/images/plus.png" alt=""  routerLink="/userPages/create-invite">
                 <img src="../../../assets/images/bell1.png" alt="">
                 <img src="../../../assets/images/user-profile.png" class="dropdown" routerLink="/">
                 <div class="profile-info">
@@ -33,14 +33,17 @@
                 </div>
                 
                 <div class="filter">
-                    <img src="../../../assets/images/filter.png" alt="">
-                    <h4>Filter</h4>
+                    <select name="filter" id="filter-select">
+                        <option value="all">All</option>
+                        <option value="Ongoing">Ongoing</option>
+                        <option value="Complete">Complete</option>
+                    </select>
                 </div>
             </div>
     
             <div class="contents-cont">
     
-                <ul class="content">
+                <ul class="content" routerLink="/userPages/visits-details">
                     <li>#: <span> 1 </span> </li>
                     <li>Visitor: <span> Barack Obama </span> </li>
                     <li>Email: <span> Barackobama@gmail.com </span> </li>
@@ -93,7 +96,7 @@
                     <tr>
                         <th class="col-1">#</th>
                         <th>Visitor</th>
-                        <th>Account ID</th>
+                        <th>Acc ID</th>
                         <th>Date</th>
                         <th>Check In</th>
                         <th>Check Out</th>
@@ -107,7 +110,7 @@
                         <td>12:00pm</td>
                         <td>12:00pm</td>
                         <td>Complete</td>
-                        <td><span>View detail</span></td>
+                        <td routerLink="/userPages/visits-details"><span>View detail</span></td>
                     </tr>
                     <tr>
                         <td class="col-1">1</td>

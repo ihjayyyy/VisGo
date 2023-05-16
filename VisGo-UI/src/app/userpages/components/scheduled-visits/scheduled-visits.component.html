@@ -5,17 +5,17 @@
     <div class="sub-cont">
         <div class="cont1">
             <div class="monthordaily">
-                <button class="monthly-btn" (click)="selected()" [ngClass]="monthly ? 'active' : ''">MONTHLY</button>
-                <button class="daily-btn"  (click)="selected()" [ngClass]="daily ? 'active' : ''">DAILY</button>
+                <button class="monthly-btn" (click)="Mselected()" [ngClass]="monthly ? 'active' : ''">MONTHLY</button>
+                <button class="daily-btn"  (click)="Dselected()" [ngClass]="daily ? 'active' : ''">DAILY</button>
             </div>
 
             <div class="date-picker-btn">
-                <input type="month" value="2023-05" >
+                <input type="month" value="{{currentMonth}}" [ngClass]="monthly? '' :'hide'">
+                <input type="date" value="{{currentDate}}"  [ngClass]="daily? '' :'hide'">
             </div>
-                    
                 
             <div class="profile">
-                <img src="../../../../assets/images/plus.png" alt="">
+                <img src="../../../../assets/images/plus.png" alt=""  routerLink="/userPages/create-invite">
                 <img src="../../../assets/images/bell1.png" alt="">
                 <img src="../../../assets/images/user-profile.png" class="dropdown" routerLink="/">
                 <div class="profile-info">
@@ -36,7 +36,7 @@
     
             <div class="contents-cont">
     
-                <ul class="content">
+                <ul class="content"  routerLink="/userPages/scheduled-visits-details">
                     <li>#: <span> 1 </span> </li>
                     <li>Visitor: <span> Barack Obama </span> </li>
                     <li>Email: <span> Barackobama@gmail.com </span> </li>
@@ -90,7 +90,7 @@
                         <th class="col-1">#</th>
                         <th>Visitor</th>
                         <th>Email</th>
-                        <th>Account ID</th>
+                        <th>Acc ID</th>
                         <th>Date</th>
                         <th>Time</th>
                     </tr>
@@ -101,7 +101,7 @@
                         <td>123456789</td>
                         <td>04/14/23</td>
                         <td>12:00pm</td>
-                        <td><span>View detail</span></td>
+                        <td routerLink="/userPages/scheduled-visits-details"><span>View detail</span></td>
                     </tr>
                     <tr>
                         <td class="col-1">1</td>

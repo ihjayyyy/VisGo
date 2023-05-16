@@ -5,7 +5,7 @@
     <div class="sub-cont">
         <div class="cont1">
             <div class="profile">
-                <img src="../../../../assets/images/plus.png" alt="">
+                <img src="../../../../assets/images/plus.png" alt=""  routerLink="/userPages/create-invite">
                 <img src="../../../assets/images/bell1.png" alt="">
                 <img src="../../../assets/images/user-profile.png" class="dropdown" routerLink="/">
                 <div class="profile-info">
@@ -41,34 +41,30 @@
                     </div>
                 </div>
                 
-                <ul class="content">
-                    <div class="info">
+                <div class="personal-info">
+                    <ul class="content">
                         <li>Name: <span> Ejay Olivar </span> </li>
                         <li>Account ID: <span> 123456789 </span> </li>
                         <li>Email: <span> ejayolivar123@gmail.com </span> </li>
-                        <li>Phone Number: <span> 12345 Santa Cruz 
+                        <li>Address: <span> 12345 Santa Cruz 
                             Street Kawit, Cavite </span> </li>
-                    </div>
-                    <div class="info">
+                        <li>Phone Number: <span>123456789</span> </li>
                         <li>Gender: <span> Male</span> </li>
                         <li>Age: <span> 22 </span> </li>
                         <li>Date of Birth: <span> 09/12/200</span> </li>
-                    </div>
+                    </ul>
 
-                </ul>
-
-                <div class="id-cont">
-                    <p>ID Picture Presented:</p>
-
-
-                    <div class="input-img">
-                        <span class="drop-title">Drop files here</span>
-                        or
-                        <input type="file" (change)="onselectFile($event)">
-                        <img [src]="url" alt="">
-                        <input type="submit">
+                    <div class="id-cont">
+                        <p>ID Picture Presented:</p>
+                        <div class="input-img">
+                            <span class="drop-title">Drop files here</span>
+                            <input type="file" (change)="onselectFile($event)">
+                            <img [src]="url" alt="">
+                            <input type="submit">
+                        </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

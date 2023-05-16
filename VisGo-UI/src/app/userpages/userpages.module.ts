@@ -13,6 +13,10 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { NavbarComponent } from '../shared/components/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateInviteComponent } from './components/create-invite/create-invite.component';
+import { DetailsOfVisitsComponent } from './components/details-of-visits/details-of-visits.component';
+import { DetailsOfScheduledVisitsComponent } from './components/details-of-scheduled-visits/details-of-scheduled-visits.component';
+import { DetailsOfRequestVisitsComponent } from './components/details-of-request-visits/details-of-request-visits.component';
+import { LocationTrackingComponent } from './components/location-tracking/location-tracking.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { CreateInviteComponent } from './components/create-invite/create-invite.
     LocationComponent,
     ProfileComponent,
     NavbarComponent,
-    CreateInviteComponent
+    CreateInviteComponent,
+    DetailsOfVisitsComponent,
+    DetailsOfScheduledVisitsComponent,
+    DetailsOfRequestVisitsComponent,
+    LocationTrackingComponent
   ],
   imports: [
     CommonModule,

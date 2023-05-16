@@ -1,0 +1,57 @@
+@import url(../details-of-visits/details-of-visits.component.css);
+.info-cont{
+    border: solid var(--black) 1px;
+    border-bottom: none;
+    padding: .5rem;
+}
+
+.info-cont h5{
+    font-size: 4vw;
+}
+
+.content img{
+    width: 100%;
+}
+
+.sub-cont{
+    height: 100%;
+}
+.cont2{
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 640px){
+
+    .info-cont h5{
+        font-size: 1.5vw;
+    }
+    .content img{
+        width: 100%;
+        height: 65vh;
+    }
+    .info-cont{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .title-cont, .contents-cont, .info-cont{
+        padding: 1%;
+        width: 98%;
+    }
+
+    .cont2{
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+}
+
+@media (min-width:1024px) and (max-height:950px){
+
+    .content img{
+       height: 57vh;
+       width: 100%;
+    }
+
+}

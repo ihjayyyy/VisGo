@@ -1,26 +1,11 @@
-.main-cont{
-    height: 100%;
-}
-
-.sub-cont{
-    height: 100%;
-}
-
-.cont1{
-    padding: 90px 1rem 0 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: .5rem;
-}
+@import url(../../../../assets/css/userpages.css);
 
 .profile{
     display: none;
 }
 
 .cont2{
-    margin: 1rem 1rem 0rem 1rem;
+    margin: 0rem 1rem 0rem 1rem;
     padding-bottom: 70px;
 }
 
@@ -50,16 +35,27 @@
 
 .contents-cont{
     border: solid var(--black) 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
 }
 
 .prof-cont1{
     display: flex;
     justify-content:space-between;
+    align-items: center;
     padding: .8rem .8rem 0 .8rem;
+}
+
+.prof-cont1 p{
+    font-size: 3.5vw;
 }
 .prof-pic{
     width: 90%;
     display: flex;
+    align-items: center;
     gap: .5rem;
 }
 .prof-pic img{
@@ -88,8 +84,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: .8rem;
     gap: .8rem;
+    border: none;
+    padding: 0;
 }
 .info{
     display: flex;
@@ -99,9 +96,8 @@
 
 .content li{
     margin: .1rem 0;
-    font-size: 5vw;
+    font-size: 4.5vw;
     font-weight: 600;
-    text-align: justify;
 }
 
 .content li span{
@@ -109,7 +105,7 @@
 }
 
 .id-cont{
-    padding: 0 .8rem .8rem .8rem;
+    margin: 0 .8rem .8rem .8rem;
     font-size: 5vw;
     font-weight: 600;
     display: flex;
@@ -119,7 +115,8 @@
 
 .id-cont img{
    width: 100%;
-   mix-blend-mode: darken;
+   height: 20vh;
+   /* mix-blend-mode: darken; */
 }
 
 .input-img{
@@ -131,7 +128,7 @@
     border: 2px dashed var(--black);
     cursor: pointer;
     transition: background .2s ease-in-out, border .2s ease-in-out;
-    gap: .5rem;
+    gap: .2rem;
 }
 
 input[type=file]{
@@ -150,23 +147,18 @@ input[type=file]::file-selector-button,input[type=submit]{
 
 input[type=file]::file-selector-button:hover , input[type=submit]:hover {
     background: var(--orange);
-  }
+}
 
-  @media (min-width: 640px) {
-    .main-cont{
-        padding: 0 0 0 20%;
-    }
+@media (min-width: 640px) {
 
-    .cont1{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        padding: 80px 40px 0 40px;
-    }
     .cont2{
+        height: auto;
         margin: 20px 40px;
-        padding-bottom: 50px;
+    }
+
+    .contents-cont{
+        padding: 1rem;
+        gap: 1rem;
     }
 
     .title-cont{
@@ -179,84 +171,69 @@ input[type=file]::file-selector-button:hover , input[type=submit]:hover {
     .title img{
         width: 8%;
     }
-    
-    .profile{
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        width: 30%;
-        gap:.5rem;
-    }
-    .profile img{
-        width: 12%;
-    }
-
-    .dropdown{
-        cursor: pointer;
-    }
-
-    .profile h5 span{
-        color: var(--grey);
-    }
-
-    .title h2{
-        font-size: 3vw;
-    }
-
-    .profile h5{
-        font-size: 1.5vw;
-    }
-
-    .prof-cont1{
-        padding: 1rem;
-    }
 
     .content, .id-cont{
-        padding: 0rem 1rem .8rem 1rem;
+        width: 50%;
     }
     
     .basic-details{
         font-size: 1.8vw;
     }
-
+    .prof-cont1{
+        padding-top:0 ;
+    }
     .prof-pic img{
         width: 12%;
     }
+    .prof-cont1 p{
+        font-size: 1.5vw;
+    }
 
     .edit-profile{
-        width: 8%;
+        width: 6%;
     }
 
     .content li, .id-cont{
         font-size: 2.5vw;
     }
+    .content li {
+        font-size: 2vw
+    }
 
     input[type=file]::file-selector-button,input[type=submit]{
         font-size: 1.5vw;
     }
-
+    .id-cont{
+        gap: 0.5rem;
+    }
     .id-cont img{
-        width: 40%;
+        width: 90%;
+        text-align: left;
     }
     .content{
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: flex-start;
         gap: 1rem;
-    }
-
-    .content li{
-        text-align: left;
+        margin: 0 .8rem .8rem .8rem;
     }
 
     .info{
         text-align: right;
     }
 
+    .profile{
+        display: flex;
+    }
+    .cont1{
+        justify-content: flex-end;
+    }
+
+    .personal-info{
+        display: flex;
+    }
 }
 
 @media (min-width:1024px) {
-    .col-1{
-        border-right: 1px solid var(--grey);
-    }
 
     .cont2{
         padding-bottom: 50px;
@@ -270,7 +247,6 @@ input[type=file]::file-selector-button:hover , input[type=submit]:hover {
         width: 6%;
     } 
 
-
     .profile h5{
         font-size: 1vw;
     }
@@ -279,7 +255,7 @@ input[type=file]::file-selector-button:hover , input[type=submit]:hover {
     }
 
     .content{
-        gap: 2rem;
+        gap: 1rem;
     }
 
     .prof-pic img{
@@ -287,7 +263,21 @@ input[type=file]::file-selector-button:hover , input[type=submit]:hover {
     }
 
     .content li, .id-cont{
-        font-size: 2.2vw;
+        font-size: 2vw;
     }
+}
 
+@media (min-width:1024px) and (max-height:950px){
+    .prof-cont1 p{
+        font-size: 1vw;
+    }
+    .content li, .id-cont{
+        font-size: 1.5vw;
+    }
+    .prof-pic img{
+        width: 6%;
+    }
+    .edit-profile{
+        width: 4%;
+    }
 }

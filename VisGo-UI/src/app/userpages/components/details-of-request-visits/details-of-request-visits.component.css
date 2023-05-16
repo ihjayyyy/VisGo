@@ -1,0 +1,48 @@
+@import url(../details-of-scheduled-visits/details-of-scheduled-visits.component.css);
+.btns{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.btns button{
+    padding: .5rem 1rem;
+    background-color: var(--black);
+    color: var(--white);
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    font-size: 4vw;
+}
+
+.col2 h5{
+    font-size: 3.5vw;
+    text-align: center;
+    opacity: 50%;
+}
+
+.col2 img{
+    width: 60%;
+    opacity: 50%;
+}
+
+@media (min-width: 640px){
+    .btns{
+        justify-content: space-around;
+    }
+    .btns button{
+        font-size: 2vw;
+    }
+    .col2{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .col2 img{
+        width: 50%;
+        margin: 0;
+    }
+
+    .col2 h5{
+        font-size: 1vw;
+    }
+}
