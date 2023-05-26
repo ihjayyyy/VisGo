@@ -1,4 +1,4 @@
-.main-cont{
+/* .main-cont{
     height: 100%;
 }
 
@@ -113,7 +113,6 @@ b{
     display: none
 }
 
-/* cont1 css */
 @import url(../../../../assets/css/cont1.css);
 
 @media (min-width: 640px) {
@@ -181,4 +180,162 @@ b{
     }
 
 }
+ */
 
+ @import url(../../../../assets/css/userpages.css);
+
+
+.title-cont{
+    border: solid var(--black) 1px;
+    padding: .5rem;
+    border-bottom: none;
+    flex-direction: column;
+}
+
+.title-cont h5, .title-cont h1{
+    text-align: center;
+}
+
+
+.title-cont h5 {
+    font-size: 3.5vw;
+    color: var(--grey);
+} 
+
+.contents-cont{
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.contents-cont h1{
+    text-align: center;
+}
+
+.form-group{
+    margin: 0 0 1rem 0 ;
+}
+
+.input-cont{
+    background-color: var(--white);
+    display: flex;
+    padding: .5rem;
+    border: solid 2px var(--orange);
+}
+
+.input-cont span{
+    cursor: pointer;
+    align-self: center;
+}
+
+input[type=text]{
+    background-color: var(--white);
+    width: 100%;
+    display: inline-block;
+    border: none;
+    box-sizing: border-box;
+    font-size: 4.5vw;
+}
+
+input[type=text]:focus-visible, input[type=password]:focus-visible, select:focus-visible{
+    outline:none ;
+}
+
+b{
+    font-size: 5vw;
+}
+
+.submit-btn{
+    cursor: pointer;
+    padding: .5rem 1rem;
+    font-size: 5vw;
+    width: 100%;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    font-weight: 600;
+    border: none;
+    color: var(--white);
+    background-color: var(--orange);
+}
+
+.alert{
+    background-color: rgba(255, 0, 0, 0.377);
+    padding: .1rem .2rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--white);
+    font-size: 3vw;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.profile, .back-btn{
+    display: none
+}
+
+@import url(../../../../assets/css/cont1.css);
+
+@media (min-width: 640px) {
+    .main-cont{
+        padding: 0 0 0 20%
+    }
+
+    .contents-cont{
+        height: auto;
+        gap: 1rem;
+    }
+    .title-cont h1, .contents-cont h1{
+        font-size: 3vw;
+    }
+
+    .title-cont h5{
+        font-size: 1.5vw;
+    }
+
+    .title-cont, .contents-cont{
+        padding: 1%;
+        width: 98%;
+    }
+
+    .form {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .forms{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 45%;
+    }
+
+    b{
+        font-size: 1.5vw;
+    }
+
+    input[type=text]{
+        font-size: 1vw;
+    }
+
+    .alert{
+        font-size: 1vw;
+    }
+    .submit-btn{
+        font-size: 1.5vw;
+    }
+
+    .cont1{
+        justify-content: space-between;
+    }
+
+    .back-btn, .profile{
+        display: flex;
+    }
+    .cont2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

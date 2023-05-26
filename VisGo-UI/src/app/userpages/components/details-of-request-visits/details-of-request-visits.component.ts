@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./details-of-request-visits.component.css']
 })
 export class DetailsOfRequestVisitsComponent {
-
+  notif: boolean = false
+  clicked(){
+    this.notif = !this.notif
+    console.log(this.notif)
+  }
 }

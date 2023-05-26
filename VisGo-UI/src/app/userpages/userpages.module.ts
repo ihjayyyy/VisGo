@@ -17,6 +17,8 @@ import { DetailsOfVisitsComponent } from './components/details-of-visits/details
 import { DetailsOfScheduledVisitsComponent } from './components/details-of-scheduled-visits/details-of-scheduled-visits.component';
 import { DetailsOfRequestVisitsComponent } from './components/details-of-request-visits/details-of-request-visits.component';
 import { LocationTrackingComponent } from './components/location-tracking/location-tracking.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { LocationTrackingComponent } from './components/location-tracking/locati
     DetailsOfVisitsComponent,
     DetailsOfScheduledVisitsComponent,
     DetailsOfRequestVisitsComponent,
-    LocationTrackingComponent
+    LocationTrackingComponent,
+    NotificationsComponent
   ],
   imports: [
     CommonModule,

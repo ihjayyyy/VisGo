@@ -1,0 +1,112 @@
+@import url(../../../../assets/css/userpages.css);
+
+.notif-box{
+    border: 1px solid var(--black);
+    justify-content: flex-start;
+    margin: 90px 1rem 0 1rem;
+    box-shadow: 5px 5px 10px 0px #00000080;
+}
+
+.notif-content{
+    border-top: 1px solid var(--black);
+    height: 70vh;
+    overflow-y: auto;
+    margin: 10px 0;
+}
+
+.notif-content::-webkit-scrollbar{
+    width: 4px;
+}
+.notif-content::-webkit-scrollbar-thumb {
+    background-color: var(--black);  
+    border: 1px solid var(--white);
+    border-radius: 20px;       
+}
+
+.notif-title-cont{
+    padding: .5rem .5rem 0 .5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: none;
+    padding-bottom: 0;
+}
+
+.notif-title-cont h1{
+     font-size: 8vw; 
+}
+
+.notif-title-cont img{
+    width: 12%;
+}
+.notif-item{
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    gap: .5rem;
+}
+
+.notif-item img{
+    width:15%;
+}
+
+.notif-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.notif-text h4, .notif-text p{
+    font-size: 4.5vw;
+}
+
+.notif-text p{
+    color: var(--grey);
+    text-align: justify;
+}
+
+@media (min-width: 640px){
+
+    .notif-box{
+        padding: 0;
+        border-width: 2px;
+        margin: 0;
+        position:absolute;
+        top: 25px;
+        right: 0%;
+        width: 40%;
+        background-color: var(--orange);
+        border-radius: 20px;
+    }
+
+    .notif-content::-webkit-scrollbar-thumb { 
+        border: 1px solid var(--orange);      
+    }
+    .notif-content{
+        border-width: 2px;
+        height: 50vh;
+    }
+
+    .notif-title-cont h1{
+        font-size: 3vw; 
+   }
+   
+   .notif-text h4, .notif-text p{
+       font-size: 1.5vw;
+   }
+   
+}
+
+@media (min-width: 1024px){
+    .notif-box{
+        top: 30px;
+    }
+    .notif-title-cont h1{
+        font-size: 2.5vw; 
+   }
+   
+   .notif-text h4, .notif-text p{
+       font-size: 1vw;
+   }
+}

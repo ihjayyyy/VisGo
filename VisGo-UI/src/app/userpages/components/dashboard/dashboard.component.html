@@ -1,16 +1,34 @@
 <div class="main-cont">
     <div class="sub-cont">
-
+        
         <div class="cont1">
             <div class="profile">
-                    <img src="../../../../assets/images/plus.png" alt="" routerLink="/userPages/create-invite">
-                    <img src="../../../assets/images/bell1.png" alt="">
-                    <img src="../../../assets/images/user-profile.png" class="dropdown" routerLink="/">
-                    <div class="profile-info">
-                        <h5>Loreto</h5>
-                        <h5><span>Host Account</span></h5>
+                <img src="../../../../assets/images/plus.png" alt="" routerLink="/userPages/create-invite">
+                <img src="../../../assets/images/bell1.png" (click)="clicked()">
+                <img src="../../../assets/images/user-profile.png" class="dropdown" routerLink="/">
+                <div class="profile-info">
+                    <h5>Loreto</h5>
+                    <h5><span>Host Account</span></h5>
                 </div>
             </div>
+
+            <div class="notif-box" [ngClass]="notif ? '' : 'hide'">
+                <div class="notif-title-cont">
+                    <img src="../../../../assets/images/bell1.png" alt="">
+                    <h1>Notification</h1>
+                </div>
+                <div class="notif-content">
+                    <div class="notif-item">
+                        <img src="../../../../assets/images/user.png" alt="">
+                        <div class="notif-text">
+                            <h4>Ejay Olivar</h4>
+                            <p>@Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         
         <div class="cont2">

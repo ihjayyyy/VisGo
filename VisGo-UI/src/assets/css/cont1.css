@@ -1,5 +1,5 @@
 .cont1{
-    padding: 90px 1rem 0 1rem;
+    margin: 90px 1rem 0 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -68,7 +68,7 @@ input[type="month"], input[type="date"]{
         justify-content: space-between;
         align-items: center;
         top: 0;
-        padding: 80px 40px 0 40px;
+        margin: 80px 40px 0 40px;
         position: relative;
     }
 
@@ -129,10 +129,10 @@ input[type="month"], input[type="date"]{
 
 }
 
-@media (min-width:1024px) and (max-height:950px){
+@media (min-width:1024px) and (max-height:768px){
 
     .cont1{
-        padding-top: 30px ;
+        margin-top: 30px ;
     }
 
 }

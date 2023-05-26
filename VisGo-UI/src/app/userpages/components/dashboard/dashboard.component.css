@@ -51,7 +51,7 @@
 }
 
 .cont3{
-    padding: 0 1rem 80px 1rem;
+    margin: 0 1rem 80px 1rem;
 }
 
 .recent-title{
@@ -103,6 +103,7 @@ table td{
     display: none;
 }
 
+@import url(../notifications/notifications.component.css);
 
 @media (min-width: 640px){
     hr{
@@ -112,7 +113,7 @@ table td{
     .cont2{
         display: flex;
         flex-direction: row;   
-        padding: 16px 40px 0 40px;
+        padding: 0px 40px 0 40px;
         gap: .8rem;
     }
     .content{
@@ -161,7 +162,7 @@ table td{
         background-color: var(--black);  
         border: 1px solid var(--white);
         border-radius: 20px;       
-      }
+    }
     
     table th{
         font-size: 2vw;
@@ -177,7 +178,7 @@ table td{
     }
 
     .cont3{
-        padding: 0 40px 20px 40px;
+        margin: 0 40px 20px 40px;
         height: 59%;
     }
 
@@ -199,10 +200,9 @@ table td{
 }
 
 @media (min-width:1024px) {
-
     .cont3{
-        padding: 0 40px 20px 40px;
-        height: 60%;
+        height: 55%;
+        margin: 0 40px 20px 40px;
     }
 
     .content h1{
@@ -221,9 +221,10 @@ table td{
         width: 16%;
     }
 
+
 }
 
-@media (min-width:1024px) and (max-height:950px){
+@media (min-width:1024px) and (max-height:768px){
 
     .content h1{
         font-size: 4.5vw;
@@ -246,7 +247,7 @@ table td{
     }
 
     .cont3{
-        padding: 0 40px 20px 40px;
-        height: 54%;
+        margin: 0 40px 20px 40px;
+        height: 50%;
     }
 }

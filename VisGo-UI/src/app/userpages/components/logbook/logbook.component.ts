@@ -11,7 +11,12 @@ export class LogbookComponent {
   public currentMonth = this.datePipe.transform(new Date(),"yyyy-MM")
   daily: boolean = false;
   monthly: boolean = true;
-
+  notif: boolean = false
+  
+  clicked(){
+    this.notif = !this.notif
+    console.log(this.notif)
+  }
   Dselected() {
     this.daily = true;
     this.monthly = false;
