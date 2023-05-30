@@ -113,7 +113,7 @@ table td{
     .cont2{
         display: flex;
         flex-direction: row;   
-        padding: 0px 40px 0 40px;
+        padding: 130px 40px 0 40px;
         gap: .8rem;
     }
     .content{
@@ -193,13 +193,14 @@ table td{
         display: flex;
     }
 
-    .cont1{
-        justify-content: flex-end;
-    }
 
 }
 
 @media (min-width:1024px) {
+
+    .cont2{
+        padding-top: 135px;
+    }
     .cont3{
         height: 55%;
         margin: 0 40px 20px 40px;

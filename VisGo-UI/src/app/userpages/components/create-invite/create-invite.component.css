@@ -1,341 +1,69 @@
-/* .main-cont{
-    height: 100%;
-}
-
-.sub-cont{
-    height: 100%;
-}
-
-.cont2{
-    padding: 0px 1rem 80px 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.title-cont{
-    border: solid var(--black) 1px;
-    padding: .5rem;
-    border-bottom: none;
-
-}
-
-.title-cont h5, .title-cont h1{
-    text-align: center;
-}
-
-.title-cont h1 {
-    font-size: 10vw;
-} 
-
-.title-cont h5 {
-    font-size: 3.5vw;
-    color: var(--grey);
-} 
-
-.contents-cont{
-    border: solid var(--black) 1px;
-    padding: .5rem;
-    display: flex;
-    flex-direction: column;
-    z-index: 2;
-    gap: .5rem;
-
-}
-
-.contents-cont h1{
-    font-size:8vw;
-    text-align: center;
-}
-
-.contents-cont form{
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group{
-    margin: 0 0 1rem 0 ;
-    width: 100%;
-}
-.input-cont{
+*{
     background-color: var(--white);
-    display: flex;
-    padding: 10px 10px 10px 10px;
-    border: solid 2px var(--orange);
 }
 
-.input-cont span{
-    cursor: pointer;
-    align-self: center;
-}
-
-input[type=text]{
-    background-color: var(--white);
-    width: 100%;
-    display: inline-block;
-    border: none;
-    box-sizing: border-box;
-    font-size: 4.5vw;
-}
-
-input[type=text]:focus-visible, input[type=password]:focus-visible, select:focus-visible{
-    outline:none ;
-}
-
-b{
-    font-size: 5vw;
-}
-
-.submit-btn{
-    cursor: pointer;
-    padding: 10px 1rem;
-    font-size: 5vw;
-    width: 100%;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    font-weight: 600;
-    border: none;
-    color: var(--white);
-    background-color: var(--orange);
-}
-
-.alert{
-    background-color: rgba(255, 0, 0, 0.377);
-    padding: .1rem .2rem;
+h1,h2,h3,h4,h5{
+    margin: 0;
+    font-family: 'Lexend', sans-serif;
+    line-height: 100%;
     text-align: center;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.form-field{
+    width: 100%;
+}
+
+.cont{
+    padding-top: 10px;
+    padding-bottom: 0;
+}
+
+.action{
+    padding: 0 25px 20px;
+}
+
+.action button{
+    flex: 1;
+}
+
+.title{
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+
+.title h5, .title h1{
+    font-family: 'Lexend', sans-serif;
+}
+
+.title h1{
+    font-size: 8vw;
     font-weight: 600;
-    color: var(--white);
+}
+
+.title h5{
     font-size: 3vw;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 }
-
-.profile, .back-btn{
-    display: none
-}
-
-@import url(../../../../assets/css/cont1.css);
 
 @media (min-width: 640px) {
-    .main-cont{
-        padding: 0 0 0 20%
+    .row{
+        flex-direction: row;
+        gap:10px;
     }
 
-    .cont2{
-        height: 80%;
-        padding: 0;
-        margin: 20px 40px;
-        justify-content: center;
-    }
-    .contents-cont{
-        gap: 1rem;
-    }
-    .title-cont, .contents-cont{
-        padding: 3%;
-        width: 94%;
-    }
-    .title-cont h1{
-        font-size: 6vw;
-    }
-
-    .title-cont h5{
-        font-size: 1.7vw;
-    }
-
-    .contents-cont h1{
-        font-size: 4vw;
-    }
-
-    .form {
-        display: flex;
-        justify-content: space-evenly;
-        width: 100%;
-    }
-
-    .forms{
-        width: 45%;
-    }
-
-    b{
+    .title h1{
         font-size: 2vw;
     }
-
-    input[type=text]{
-        font-size: 1.5vw;
-    }
-
-    .alert{
+    
+    .title h5{
         font-size: 1vw;
-    }
-    .submit-btn{
-        margin-top: 6%;
-        font-size: 2vw;
-    }
-
-    .cont1{
-        justify-content: space-between;
-    }
-
-    .back-btn, .profile{
-        display: flex;
-    }
-
-}
- */
-
- @import url(../../../../assets/css/userpages.css);
-
-
-.title-cont{
-    border: solid var(--black) 1px;
-    padding: .5rem;
-    border-bottom: none;
-    flex-direction: column;
-}
-
-.title-cont h5, .title-cont h1{
-    text-align: center;
-}
-
-
-.title-cont h5 {
-    font-size: 3.5vw;
-    color: var(--grey);
-} 
-
-.contents-cont{
-    padding: .5rem;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
-
-.contents-cont h1{
-    text-align: center;
-}
-
-.form-group{
-    margin: 0 0 1rem 0 ;
-}
-
-.input-cont{
-    background-color: var(--white);
-    display: flex;
-    padding: .5rem;
-    border: solid 2px var(--orange);
-}
-
-.input-cont span{
-    cursor: pointer;
-    align-self: center;
-}
-
-input[type=text]{
-    background-color: var(--white);
-    width: 100%;
-    display: inline-block;
-    border: none;
-    box-sizing: border-box;
-    font-size: 4.5vw;
-}
-
-input[type=text]:focus-visible, input[type=password]:focus-visible, select:focus-visible{
-    outline:none ;
-}
-
-b{
-    font-size: 5vw;
-}
-
-.submit-btn{
-    cursor: pointer;
-    padding: .5rem 1rem;
-    font-size: 5vw;
-    width: 100%;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    font-weight: 600;
-    border: none;
-    color: var(--white);
-    background-color: var(--orange);
-}
-
-.alert{
-    background-color: rgba(255, 0, 0, 0.377);
-    padding: .1rem .2rem;
-    text-align: center;
-    font-weight: 600;
-    color: var(--white);
-    font-size: 3vw;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
-}
-
-.profile, .back-btn{
-    display: none
-}
-
-@import url(../../../../assets/css/cont1.css);
-
-@media (min-width: 640px) {
-    .main-cont{
-        padding: 0 0 0 20%
-    }
-
-    .contents-cont{
-        height: auto;
-        gap: 1rem;
-    }
-    .title-cont h1, .contents-cont h1{
-        font-size: 3vw;
-    }
-
-    .title-cont h5{
-        font-size: 1.5vw;
-    }
-
-    .title-cont, .contents-cont{
-        padding: 1%;
-        width: 98%;
-    }
-
-    .form {
-        display: flex;
-        justify-content: space-evenly;
-        width: 100%;
-    }
-
-    .forms{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 45%;
-    }
-
-    b{
-        font-size: 1.5vw;
-    }
-
-    input[type=text]{
-        font-size: 1vw;
-    }
-
-    .alert{
-        font-size: 1vw;
-    }
-    .submit-btn{
-        font-size: 1.5vw;
-    }
-
-    .cont1{
-        justify-content: space-between;
-    }
-
-    .back-btn, .profile{
-        display: flex;
-    }
-    .cont2{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 }

@@ -1,8 +1,56 @@
-@import url(../details-of-visits/details-of-visits.component.css);
-.content img{
-    width: 70%;
+h1,h2,h3,h4,h5{
+    margin: 0;
+    font-family: 'Lexend', sans-serif;
+    line-height: 100%;
+    text-align: center;
 }
-.col2{
-    align-items: center;
+
+
+.cont2{
+    background-color: var(--white);
+    padding: 20px;
+}
+
+.title{
+    border: solid 1px var(--black);
+    display: flex;
     justify-content: center;
+    align-items: center;
+    padding: .5rem;
+}
+
+.title h2{
+    font-size: 4.5vw;
+    font-weight: 600;
+}
+
+.title img{
+    width: 15%;
+}
+
+.content{
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid 1px var(--black);
+    border-top:none ;
+}
+
+.content li{
+    margin: .1rem 0;
+    font-size: 4vw;
+    font-weight: 600;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+    list-style-type: none;
+}
+
+.content span{
+    color: var(--grey);
+}
+
+.content img{
+    width: 80%;
+    margin: 0 auto;
 }

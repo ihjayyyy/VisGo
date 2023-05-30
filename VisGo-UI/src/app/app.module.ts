@@ -7,8 +7,10 @@ import { AdminLogInComponent } from './auth/components/admin-log-in/admin-log-in
 import { RegisterComponent } from './auth/components/register/register.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { UserPagesModule } from './userpages/userpages.module';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import {  HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from 'src/material.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,9 @@ import { UserPagesModule } from './userpages/userpages.module';
     ReactiveFormsModule,
     AppRoutingModule,
     UserPagesModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

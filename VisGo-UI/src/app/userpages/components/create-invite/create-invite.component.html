@@ -1,138 +1,49 @@
+<div mat-dialog-title class="title">
+    <h1>Create Invite</h1>
+    <h5>You will be sent a confirmation notification when
+        your reservation has been confirmed</h5>
+</div>
+<form [formGroup]="inviteForm" (ngSubmit)="onFormSubmit()">
+    <div class="cont" mat-dialog-content >
+        <div class="row">
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Visitor's Name</mat-label>
+                <input matInput type="text" placeholder="Ex. John Doe" formControlName="name">
+            </mat-form-field>
 
-<div class="main-cont">
-
-    <div class="sub-cont">
-        <div class="cont1">
-
-            <div class="back-btn">
-                <img src="../../../../assets/images/back-button.png" alt="" routerLink="/userPages/dashboard">
-            </div>
-            <div class="profile">
-                    <img src="../../../../assets/images/plus.png" alt="" routerLink="/userPages/create-invite">
-                    <img src="../../../assets/images/bell1.png" alt="">
-                    <img src="../../../assets/images/user-profile.png" class="dropdown" routerLink="/">
-                    <div class="profile-info">
-                        <h5>Loreto</h5>
-                        <h5><span>Host Account</span></h5>
-                </div>
-            </div>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Date of Visit</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="date">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
         </div>
 
-        <div class="cont2">
-            <div class="title-cont">
-                <h1>Schedule a Visit</h1>
-                <h5>You will be sent a confirmation notification when your reservation has been confirmed</h5>
-            </div>
-
-            <div class="contents-cont">
-                <h1>Personal Details of Visitor</h1>
-
-                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                        <div class="form">
-                            <div class="forms">
-                                <div class="form-group">
-                                    <label for="visName"><b>Name of Visitor</b></label>
-                                    <div class="input-cont">
-                                        <input type="text" name="visName" required formControlName="visName">
-                                    </div>
-                
-                                    <div class="alert" *ngIf="fc.visName.invalid && (fc.visName.dirty || fc.visName.touched)">
-                                        <div *ngIf="fc.visName.errors?.['required']">
-                                            This is required.
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="visEmail"><b>Email of Visitor</b></label>
-                                    <div class="input-cont">
-                                        <input type="text" name="visEmail" required formControlName="visEmail">
-                                    </div>
-                
-                                    <div class="alert" *ngIf="fc.visEmail.invalid && (fc.visEmail.dirty || fc.visEmail.touched)">
-                                        <div *ngIf="fc.visEmail.errors?.['required']">
-                                            This is required.
-                                        </div>
-                                    </div>
-                                </div>
-            
-                                <div class="form-group">
-                                    <label for="visPhone"><b>Phone of Visitor</b></label>
-                                    <div class="input-cont">
-                                        <input type="text" name="visPhone" required formControlName="visPhone">
-                                    </div>
-                
-                                    <div class="alert" *ngIf="fc.visPhone.invalid && (fc.visPhone.dirty || fc.visPhone.touched)">
-                                        <div *ngIf="fc.visPhone.errors?.['required']">
-                                            This is required.
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="visAccID"><b>Account ID of Visitor</b></label>
-                                    <div class="input-cont">
-                                        <input type="text" name="visAccID" required formControlName="visAccID">
-                                    </div>
-                
-                                    <div class="alert" *ngIf="fc.visAccID.invalid && (fc.visAccID.dirty || fc.visAccID.touched)">
-                                        <div *ngIf="fc.visAccID.errors?.['required']">
-                                            This is required.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-          
+        <div class="row">
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Email of Visitor</mat-label>
+                <input matInput type="text" placeholder="Ex. johndoe@gmail.com" formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Time of Visit</mat-label>
+                <input matInput type="text" placeholder="Ex. John Doe" formControlName="time">
+            </mat-form-field>
+        </div>
         
-                            <div class="forms">
-                                <div class="form-group">
-                                    <label for="date"><b>Date of Visit</b></label>
-                                    <div class="input-cont">
-                                        <input type="text" name="date" required formControlName="date">
-                                    </div>
-                
-                                    <div class="alert" *ngIf="fc.date.invalid && (fc.date.dirty || fc.date.touched)">
-                                        <div *ngIf="fc.date.errors?.['required']">
-                                            This is required.
-                                        </div>
-                                    </div>
-                                </div>
-            
-                                <div class="form-group">
-                                    <label for="time"><b>Time of Visit</b></label>
-                                    <div class="input-cont">
-                                        <input type="text" name="time" required formControlName="time">
-                                    </div>
-                
-                                    <div class="alert" *ngIf="fc.time.invalid && (fc.time.dirty || fc.time.touched)">
-                                        <div *ngIf="fc.time.errors?.['required']">
-                                            This is required.
-                                        </div>
-                                    </div>
-                                </div>
-            
-                                <div class="form-group">
-                                    <label for="purpose"><b>Purpose of Visit</b></label>
-                                    <div class="input-cont">
-                                        <input type="text" name="purpose" required formControlName="purpose">
-                                    </div>
-                
-                                    <div class="alert" *ngIf="fc.purpose.invalid && (fc.purpose.dirty || fc.purpose.touched)">
-                                        <div *ngIf="fc.purpose.errors?.['required']">
-                                            This is required.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="btns">
-                                    <button class="submit-btn" type="submit" (click)="onSubmit">Submit</button>
-                                </div>
-                            </div>
-
-                        </div>
-    
-                    </form>
-      
-            </div>
+        <div class="row">
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Phone # of Visitor</mat-label>
+                <input matInput type="text" placeholder="Ex. 0912345678" formControlName="number">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Purpose of Visit</mat-label>
+                <input matInput type="text" placeholder="Ex. Family Gathering" formControlName="purpose">
+            </mat-form-field>
         </div>
     </div>
-</div>
+    <div mat-dialog-actions class="action">
+        <button mat-stroked-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-stroked-button color="primary" type="submit">Submit</button>
+    </div>
+</form>

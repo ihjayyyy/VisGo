@@ -1,8 +1,10 @@
+@import '../node_modules/@syncfusion/ej2-material-theme/styles/material.css';
 :root{
     --orange:#EF9273;
     --black:#000000;
     --white:#FFF1E1;
     --grey: rgba(0, 0, 0, 0.5);
+    
 }
 *{
     margin: 0;

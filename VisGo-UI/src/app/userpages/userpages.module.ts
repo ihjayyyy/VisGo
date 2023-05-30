@@ -18,7 +18,21 @@ import { DetailsOfScheduledVisitsComponent } from './components/details-of-sched
 import { DetailsOfRequestVisitsComponent } from './components/details-of-request-visits/details-of-request-visits.component';
 import { LocationTrackingComponent } from './components/location-tracking/location-tracking.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserModule } from '@angular/platform-browser';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
+import {  MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MaterialModule } from 'src/material.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +50,7 @@ import { NotificationsComponent } from './components/notifications/notifications
     DetailsOfScheduledVisitsComponent,
     DetailsOfRequestVisitsComponent,
     LocationTrackingComponent,
-    NotificationsComponent
+    NotificationsComponent,
   ],
   imports: [
     CommonModule,
@@ -45,6 +59,10 @@ import { NotificationsComponent } from './components/notifications/notifications
     DatePipe,
     FormsModule,
     ReactiveFormsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MaterialModule,
   ],
   providers:[DatePipe]
 })

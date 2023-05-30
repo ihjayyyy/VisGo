@@ -2,44 +2,6 @@
 <div class="main-cont">
 
     <div class="sub-cont">
-        <div class="cont1">
-            <div class="monthordaily">
-                <button class="monthly-btn" (click)="Mselected()" [ngClass]="monthly ? 'active' : ''">MONTHLY</button>
-                <button class="daily-btn"  (click)="Dselected()" [ngClass]="daily ? 'active' : ''">DAILY</button>
-            </div>
-
-            <div class="date-picker-btn">
-                <input type="month" value="{{currentMonth}}" [ngClass]="monthly? '' :'hide'">
-                <input type="date" value="{{currentDate}}"  [ngClass]="daily? '' :'hide'">
-            </div>
-                
-            <div class="profile">
-                <img src="../../../../assets/images/plus.png" alt=""  routerLink="/userPages/create-invite">
-                <img src="../../../assets/images/bell1.png" alt="" (click)="clicked()">
-                <img src="../../../assets/images/user-profile.png" class="dropdown" routerLink="/">
-                <div class="profile-info">
-                    <h5>Loreto</h5>
-                    <h5><span>Host Account</span></h5>
-                </div>
-            </div>
-            <!-- <app-notifications [ngClass]="notif ? '' : 'hide'"></app-notifications> -->
-            <div class="notif-box" [ngClass]="notif ? '' : 'hide'">
-                <div class="notif-title-cont">
-                    <img src="../../../../assets/images/bell1.png" alt="">
-                    <h1>Notification</h1>
-                </div>
-                <div class="notif-content">
-                    <div class="notif-item">
-                        <img src="../../../../assets/images/user.png" alt="">
-                        <div class="notif-text">
-                            <h4>Ejay Olivar</h4>
-                            <p>@Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     
         <div class="cont2">
             <div class="title-cont">
@@ -131,7 +93,7 @@
                     </tr>
                     <tr>
                         <td class="col-1">1</td>
-                        <td>Barack Obama</td>
+                        <td>Barack Obamad</td>
                         <td>123456789</td>
                         <td>04/14/23</td>
                         <td>12:00pm</td>

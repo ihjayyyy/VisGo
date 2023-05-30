@@ -1,7 +1,10 @@
+import { DialogRef } from '@angular/cdk/dialog';
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
-import ValidateForm from 'src/app/helpers/validateForm';
+import { CoreService } from 'src/app/core/core.service';
+import { InviteService } from 'src/app/services/invite.service';
+
 
 @Component({
   selector: 'app-create-invite',
@@ -10,37 +13,37 @@ import ValidateForm from 'src/app/helpers/validateForm';
 })
 export class CreateInviteComponent {
 
-  loginForm!: any;
-  dummyAcc: any = {
-    userName: '',
-    password: ''
-  };
-  emailRegex: string = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+  inviteForm: FormGroup;
 
-  constructor(fb: FormBuilder, private router: Router) {
-    this.loginForm = fb.group({
-      visName: ['', Validators.required],
-      visEmail: ['', Validators.required, Validators.pattern(this.emailRegex)],
-      visPhone:['',Validators.required],
-      visAccID:['', Validators.required],
-      date:['', Validators.required],
-      time:['',Validators.required],
-      purpose:['',Validators.required]
-    });
+  constructor(private _fb : FormBuilder, 
+    private _inviteService: InviteService, 
+    private _dialogRef: DialogRef<CreateInviteComponent>,
+    private router: Router,
+    private _coreService:CoreService,
+    ){
+    this.inviteForm = this._fb.group({
+      name:'',
+      email:'',
+      date:'',
+      time:'',
+      number:'',
+      purpose:'',
+    })
   }
 
-  get fc() {
-    return this.loginForm.controls;
-  }
-
-
-
-  onSubmit() {
-    if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
-    }
-    else {
-      ValidateForm.validateAllFormFields(this.loginForm);
-    }
+  onFormSubmit() {
+    if (this.inviteForm.valid) {
+      this._inviteService.addInvites(this.inviteForm.value).subscribe({
+        next: (val: any) => {
+          this._coreService.openSnackBar('Invite added successfully!', 'done');
+          this._dialogRef.close();
+          this.router.navigate(['/userPages/scheduled']);
+        },
+        error: (err: any) => {
+          console.error(err);
+          this._coreService.openSnackBar('Error occurred while adding invite.', 'error');
+        }
+      });
+    } 
   }
 }

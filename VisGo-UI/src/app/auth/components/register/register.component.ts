@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import ValidateForm from 'src/app/helpers/validateForm';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,7 @@ export class RegisterComponent {
   registrationForm: any;
   emailRegex: string = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 
-  constructor( fb: FormBuilder){
+  constructor( fb: FormBuilder, private service:AuthService){
 
     this.registrationForm = fb.group({
       name : ['', [ Validators.required, Validators.minLength(5)]],

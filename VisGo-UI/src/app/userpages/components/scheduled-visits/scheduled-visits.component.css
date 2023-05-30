@@ -1,1 +1,48 @@
 @import url(../../../../assets/css/userpages.css);
+
+
+
+.table,.paginator{
+    background-color: var(--white);
+}
+
+.paginator{
+    height: 100%;
+    display: none;
+}
+
+
+.t-row, .view-btn, .delete-btn{
+    height: 100%;
+    padding: 5px 0;
+}
+
+.view-btn, .delete-btn{
+    background-color: var(--white);
+    color: var(--grey);
+    font-size: 1vw;
+    padding: .5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+.view-btn:hover, .delete-btn:hover{
+    background-color: rgba(0, 0, 0, 0.116);
+}
+
+.delete-btn{
+    color: red;
+}
+
+
+.mat-column-id{
+    width: 2% !important;
+}
+
+@media (min-width: 640px){
+    .paginator{
+        display: block;
+    }
+}

@@ -10,11 +10,10 @@
         <div class="sub-cont1">
             <p>Already have account? <span routerLink="/">Sign in here!</span></p>
             <p>Create account as a Visitor? <span (click)="onClick()">Sign up here!</span></p>
-            <h1>Create an <span>{{accType}} Account</span></h1>
         </div>
 
         <div class="sub-cont2">
-
+            <h1>Create an <span>{{accType}} Account</span></h1>
             <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
 
                 <div class="form-group">

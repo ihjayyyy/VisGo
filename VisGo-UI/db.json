@@ -1,0 +1,42 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "Invites": [
+    {
+      "name": "John Doe",
+      "email": "Johndoe@gmail.com",
+      "date": "2023-05-28T16:00:00.000Z",
+      "time": "12:00nn",
+      "number": "12345678912",
+      "purpose": "Birthday",
+      "id": 1
+    },
+    {
+      "name": "Cleo Panoringan",
+      "email": "Cleopanoringan@gmail.com",
+      "date": "2023-05-09T16:00:00.000Z",
+      "time": "1:00pm",
+      "number": "1234567897",
+      "purpose": "Inuman",
+      "id": 2
+    }
+  ],
+  "user":[
+
+  ]
+}

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CreateInviteComponent } from './userpages/components/create-invite/create-invite.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'VisGo';
+
+  constructor(private dialog: MatDialog){}
+
+  openAddSched(){
+    this.dialog.open(CreateInviteComponent)
+  }
 }

@@ -1,3 +1,14 @@
+h1,h2,h3,h4,h5,p{
+    margin: 0;
+    font-family: 'Lexend', sans-serif;
+    line-height: 100%;
+    text-align: center;
+}
+
+h1,h2,h3,h4,h5{
+    font-weight: 600;
+}
+
 .background-pic{
     z-index: 1;
     position: absolute;
@@ -34,22 +45,21 @@
 .main-cont{
     height: 92%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
 }
 
 .sub-cont1{
     z-index: 2;
-    margin: 1rem 0 0 0;
     padding: 0rem 2rem;
     text-align: center;
 }
 
 .sub-cont1 p {
     width: 100%;
-    text-align: left;
+    text-align: right;
     margin: 0 0 .2rem 0;
-    font-size: 4.1vw;
+    font-size: 3.8vw;
 }
 
 .sub-cont1 p span{
@@ -61,12 +71,11 @@
     margin: 2rem 0;
 }
 
-.sub-cont1 h1{
-    margin: .5rem 0 0 0;
+.sub-cont2 h1{
     font-size: 10vw;
 }
 
-.sub-cont1 h1 span{
+.sub-cont2 h1 span{
     color: var(--orange);
 }
 
@@ -123,17 +132,18 @@ b{
 .label {
     position: relative;
     cursor: pointer;
-    font-size: 4vw;
+    font-size: 3vw;
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
     margin: 20px 0 20px 0;
+    gap: .5rem;
 }
 
 .label p {
     width: 100%;
+    text-align: start;
 }
 
 .label p span{
@@ -147,10 +157,10 @@ input[type=checkbox] {
 
 .customCheckbox {
     position: absolute;
-    top: 4px;
-    left: 0;
-    height: 18px;
-    width: 18px;
+    top: 2px;
+    left: 2px;
+    height: 12px;
+    width: 12px;
     background-color: var(--white);
     border: solid 1px var(--orange);
 }
@@ -173,10 +183,10 @@ input[type=checkbox] {
 showing only two border to make it look
 like a tickmark */
 .label .customCheckbox:after {
-    left: 6px;
-    bottom: 6px;
-    width: 6px;
-    height: 13px;
+    left: 4px;
+    bottom: 3px;
+    width: 3px;
+    height: 8px;
     border: solid var(--orange);
     border-width: 0 2px 2px 0;
     -webkit-transform: rotate(45deg);
@@ -254,13 +264,12 @@ like a tickmark */
         border: none;
     }
 
-    .sub-cont1 h1{
+    .sub-cont2 h1{
         font-size: 5.5vw;
         text-align: start;
     }
 
     .sub-cont1 p{
-        font-weight: 600;
         text-align: right;
         font-size: 1.9vw;
     }
@@ -283,7 +292,7 @@ like a tickmark */
     }
 
     .label p{
-        font-size: 2vw;
+        font-size: 1.5vw;
     }
 
     input[type=text], input[type=password]{
@@ -312,10 +321,10 @@ like a tickmark */
     }
 
     .label .customCheckbox:after {
-        left: 6px;
-        bottom: 5px;
-        width: 5px;
-        height: 11px;
+        left: 4px;
+        bottom: 3px;
+        width: 3px;
+        height: 8px;
     }
 
     .create-btn, .input-cont{
@@ -343,7 +352,7 @@ like a tickmark */
     }
 
     .alert, .label p{
-        font-size: 1.3vw;
+        font-size: 1vw;
     }
 
 }
@@ -364,21 +373,16 @@ like a tickmark */
         width: 90%;
         background-position: top;
     }
-
-    .label p {
-        padding-top: 2px ;
-        font-size: 1rem;
-    }
     
     .customCheckbox{
         top: 0px;
     }
 
     .label .customCheckbox:after {
-        left: 6px;
-        bottom: 5px;
-        width: 4px;
-        height: 9px;
+        left: 4px;
+        bottom: 3px;
+        width: 3px;
+        height: 8px;
     }
 
     .sub-cont1 p span{
@@ -408,10 +412,10 @@ like a tickmark */
     }
 
     .alert, .label p{
-        font-size: 1.3vw;
+        font-size: 1vw;
     }
 
-    .sub-cont1 h1{
+    .sub-cont2 h1{
         font-size: 3vw;
     }
     .alert{

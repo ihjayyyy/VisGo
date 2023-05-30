@@ -1,5 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateInviteComponent } from 'src/app/userpages/components/create-invite/create-invite.component';
 
 @Component({
   selector: 'app-header',
@@ -22,5 +24,11 @@ export class HeaderComponent {
     this.daily = false;
   }
   
-constructor(private datePipe:DatePipe){}
+constructor(private datePipe:DatePipe, private dialog: MatDialog){}
+
+
+
+openAddSched(){
+  this.dialog.open(CreateInviteComponent)
+}
 }

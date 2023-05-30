@@ -1,3 +1,9 @@
+h1,h2,h3,h4,h5{
+    margin: 0;
+    font-family: 'Lexend', sans-serif;
+    line-height: 100%;
+}
+
 .title-cont{
     position: fixed;
     top: 0;
@@ -6,16 +12,22 @@
     height: 50px;
     justify-content: space-between;
     align-items: center;
-    padding: .5rem 1.5rem;
+    padding: .5rem 0;
     z-index: 100;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    width: 100%;
+}
+
+.title{
+    padding-left: 1.5rem ;
 }
 
 .title h1{
     color: var(--white);
     font-size: 2.5rem;
     line-height: 80%;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
+    font-weight: 700;
 }
 
 .title span{
@@ -32,9 +44,11 @@
 .buttons-cont{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 55%;
+    align-items: flex-end;
+    width: 40%;
+    gap: .5rem;
     height: 100%;
+    padding-right:1.5rem ;
 }
 
 .button{
@@ -54,12 +68,81 @@
 }
 
 .button img{
-    max-width: 50%;
+    width: 20px;
+    max-width: 25px;
     opacity: 70%;
 }
+
+.cont1{
+    padding: 80px 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: .5rem;
+}
+
+.profile{
+    display: none;
+}
+
+
 @media (min-width: 640px) {
+    .mcont{
+        padding: 0 0 0 20%;
+    }
     .title-cont{
         display: none;
+    }
+    .cont1{
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        top: 0;
+        padding: 90px 40px 0 40px;
+        position: absolute;
+    }
+
+    .profile{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 30%;
+        gap:.5rem;
+    }
+    .profile img{
+        cursor: pointer;
+        width: 12%;
+    }
+
+    .profile h5 span{
+        color: var(--grey);
+    }
+    .profile h5{
+        font-size: 1.5vw;
+    }
+
+}
+
+
+@media (min-width:1024px) {
+
+    .profile{
+        width: 25%;
+    }
+
+    .profile img{
+        width: 10%;
+    }
+    .profile h5{
+        font-size: 1vw;
+    }
+
+}
+
+@media (min-width:1024px) and (max-height:768px){
+    .cont1{
+        padding: 46px 40px 0 40px;
     }
 
 }
