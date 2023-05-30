@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import ValidateForm from 'src/app/helpers/validateForm';
-import { AuthService } from 'src/app/services/auth.service';
+import { Component } from "@angular/core";
+import { FormBuilder, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import ValidateForm from "src/app/helpers/validateForm";
+import { AuthService } from "src/app/services/auth.service";
+
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent {
 
   accType: string = "Host";
@@ -21,7 +24,7 @@ export class RegisterComponent {
   registrationForm: any;
   emailRegex: string = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 
-  constructor( fb: FormBuilder, private service:AuthService){
+  constructor( fb: FormBuilder, private service:AuthService, private router:Router){
 
     this.registrationForm = fb.group({
       name : ['', [ Validators.required, Validators.minLength(5)]],
@@ -54,7 +57,9 @@ export class RegisterComponent {
     if(this.registrationForm.valid)
     {
       console.log(this.registrationForm.value)
-      // send the obj to database
+      this.service.Register(this.registrationForm.value).subscribe(res =>{
+
+      });
     }
     else{
       ValidateForm.validateAllFormFields(this.registrationForm)
