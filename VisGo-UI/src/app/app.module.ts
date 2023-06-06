@@ -9,12 +9,14 @@ import { LoginComponent } from './auth/components/login/login.component';
 import { UserPagesModule } from './userpages/userpages.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     AdminLogInComponent,
     LoginComponent,
     RegisterComponent,
+    
   ],
   imports: [
     BrowserModule,
