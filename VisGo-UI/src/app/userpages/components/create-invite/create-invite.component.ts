@@ -2,7 +2,8 @@ import { DialogRef } from '@angular/cdk/dialog';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
-import { CoreService } from 'src/app/core/core.service';
+import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/services/auth.service';
 import { InviteService } from 'src/app/services/invite.service';
 
 
@@ -19,7 +20,8 @@ export class CreateInviteComponent {
     private _inviteService: InviteService, 
     private _dialogRef: DialogRef<CreateInviteComponent>,
     private router: Router,
-    private _coreService:CoreService,
+    private toastr: ToastrService,
+    private _authService: AuthService
     ){
     this.inviteForm = this._fb.group({
       name:'',
@@ -33,17 +35,23 @@ export class CreateInviteComponent {
 
   onFormSubmit() {
     if (this.inviteForm.valid) {
-      this._inviteService.addInvites(this.inviteForm.value).subscribe({
+      const invite = this.inviteForm.value;
+      const username = this._authService.userID;
+
+      this._authService.AddInviteToUser(invite, username).subscribe({
         next: (val: any) => {
-          this._coreService.openSnackBar('Invite added successfully!', 'done');
+          this.toastr.success('Created Invite Successfully');
           this._dialogRef.close();
-          this.router.navigate(['/userPages/scheduled']);
+          this.router.navigate(['/userPages/scheduled']).then(() => {
+            location.reload();
+          });
         },
         error: (err: any) => {
           console.error(err);
-          this._coreService.openSnackBar('Error occurred while adding invite.', 'error');
+          this.toastr.error('Error occurred while adding invite.', 'error');
         }
       });
-    } 
+    }
   }
+  
 }

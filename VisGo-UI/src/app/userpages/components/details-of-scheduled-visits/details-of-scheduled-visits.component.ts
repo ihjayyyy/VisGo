@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { InviteService } from 'src/app/services/invite.service';
+import { Component, Input } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-details-of-scheduled-visits',
@@ -7,12 +7,11 @@ import { InviteService } from 'src/app/services/invite.service';
   styleUrls: ['./details-of-scheduled-visits.component.css']
 })
 export class DetailsOfScheduledVisitsComponent {
-  constructor(private _inviteService: InviteService) {}
-
-  data:any
-  
+  constructor(private _authService: AuthService) {}
+  inviteData: any;
   ngOnInit(): void {
-    this.data = this._inviteService.dataById
+     this.inviteData = this._authService.PassInviteDatabyId();
+    //  console.log(this.inviteData)
   };
   
 }

@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
 import ValidateForm from "src/app/helpers/validateForm";
 import { AuthService } from "src/app/services/auth.service";
 
@@ -14,6 +15,7 @@ import { AuthService } from "src/app/services/auth.service";
 export class RegisterComponent {
 
   accType: string = "Host";
+  altType: string = "Visitor"
   clicked: boolean= false;
   passType: string= "password";
   passIsText: boolean = false;
@@ -24,14 +26,15 @@ export class RegisterComponent {
   registrationForm: any;
   emailRegex: string = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 
-  constructor( fb: FormBuilder, private service:AuthService, private router:Router){
+  constructor( fb: FormBuilder, private service:AuthService, private router:Router, private toastr: ToastrService){
 
     this.registrationForm = fb.group({
       name : ['', [ Validators.required, Validators.minLength(5)]],
       email : ['', [ Validators.required,Validators.pattern(this.emailRegex)]],
-      uname : ['', [Validators.required, Validators.minLength(5)]],
+      id : ['', [Validators.required, Validators.minLength(5)]],
       pass : ['', [Validators.required]],
-      conPass : ['',[Validators.required]]
+      conPass : ['',[Validators.required]],
+      accType : [this.accType,]
     })
 
   }
@@ -54,14 +57,17 @@ export class RegisterComponent {
   }
 
   onSubmit(){
+    this.registrationForm.accType = this.accType
     if(this.registrationForm.valid)
     {
       console.log(this.registrationForm.value)
       this.service.Register(this.registrationForm.value).subscribe(res =>{
-
+        this.toastr.success('Registered Successfully');
+        this.router.navigate([''])
       });
     }
     else{
+      this.toastr.warning('Please Enter Valid Data')
       ValidateForm.validateAllFormFields(this.registrationForm)
     }
   }
@@ -71,10 +77,15 @@ export class RegisterComponent {
     if(this.clicked == true)
     {
       this.accType = 'Visitor'
+      this.altType = 'Host'
+      this.registrationForm.controls.accType.setValue(this.accType);
     }
     else{
       this.accType ='Host'
+      this.altType = 'Visitor'
+      this.registrationForm.controls.accType.setValue(this.accType);
     }
+    console.log(this.accType)
   }
 
 

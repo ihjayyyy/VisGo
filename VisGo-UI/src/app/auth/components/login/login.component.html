@@ -40,10 +40,8 @@
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
                 <div class="form-group">
-                    <label for="property-name"><b>Select a Village/Building</b></label>
                     <div class="input-cont">
                         <select name="property" id="property">
-                            <option value="">--Please choose an option--</option>
                             <optgroup label="Villages">
                                 <option value="Camella">Camella</option>
                                 <option value="Lancaster">Lancaster</option>
@@ -53,30 +51,32 @@
                                 <option value="CMDL's Dormitory">CMDL's Dormitory</option>
                               </optgroup>
                         </select>
+                        <span class="label-span">Select property</span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="uname"><b>Username/Email</b></label>
                     <div class="input-cont">
                         <input type="text" name="uname" required formControlName="uname">
-                    </div>
-
-                    <div class="alert" *ngIf="fc.uname.invalid && (fc.uname.dirty || fc.uname.touched)">
-                        <div *ngIf="fc.uname.errors?.['required']">
-                            Username is required.
+                        <span class="label-span">username</span>
+                        <div class="alert" *ngIf="fc.uname.invalid && (fc.uname.dirty)">
+                            <div *ngIf="fc.uname.errors?.['required']">
+                                Username is required.
+                            </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="pass"><b>Password</b></label>
                     <div class="input-cont">      
-                        <input [type]="type" name="pass" require formControlName="pass">
+                        <input [type]="type" name="pass" required formControlName="pass">
+
+                        <span class="label-span">password</span>
                         <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
-                    </div>
-                    <div class="alert" *ngIf="fc.pass.invalid && (fc.pass.dirty || fc.pass.touched)">
-                        <div *ngIf="fc.pass.errors?.['required']">
-                            Password is required.
+                        
+                        <div class="alert" *ngIf="fc.pass.invalid && (fc.pass.dirty)">
+                            <div *ngIf="fc.pass.errors?.['required']">
+                                Password is required.
+                            </div>
                         </div>
                     </div>
                 </div>

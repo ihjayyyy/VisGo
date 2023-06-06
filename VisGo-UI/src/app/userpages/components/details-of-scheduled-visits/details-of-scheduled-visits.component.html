@@ -12,13 +12,17 @@
     <div class="contents-cont">
 
         <ul class="content">
-                <li> <p>Visitor's Name: <span>{{data.name}}</span> </p> </li>
-                <li> <p>Email: <span> {{data.email}}</span> </p> </li>
-                <li> <p>Phone Number: <span> {{data.number}} </span> </p> </li>
-                <li> <p>Purpose: <span> {{data.purpose}}</span> </p> </li>
-                <li> <p>Relationship:<span> Family </span> </p> </li>
-                <li> <p>Transaction ID: <span> 123456789 </span> </p> </li>
+            <div class="col1">
+                <li>Visitor's Name: <span>{{inviteData.name}}</span> </li>
+                <li>Email: <span> {{inviteData.email}}</span> </li>
+                <li>Phone Number: <span> {{inviteData.number}}</span> </li>
+                <li>Purpose: <span> {{inviteData.purpose}} </span> </li>
+                <li>Relationship: <span> Family</span> </li>
+                <li>Transaction ID: <span>{{inviteData.id}} </span> </li>
+            </div>
+            <div class="col2">
                 <img src="../../../../assets/images/qr-code.jpg" alt="">
+            </div>
         </ul>
             
     </div>

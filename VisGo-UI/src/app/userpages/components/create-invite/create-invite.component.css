@@ -2,6 +2,7 @@
     background-color: var(--white);
 }
 
+
 h1,h2,h3,h4,h5{
     margin: 0;
     font-family: 'Lexend', sans-serif;
@@ -9,61 +10,189 @@ h1,h2,h3,h4,h5{
     text-align: center;
 }
 
-.row{
-    display: flex;
-    flex-direction: column;
-    padding-top: 10px;
+.main-cont{
+    padding: 20px;
 }
 
-.form-field{
-    width: 100%;
-}
-
-.cont{
-    padding-top: 10px;
-    padding-bottom: 0;
-}
-
-.action{
-    padding: 0 25px 20px;
-}
-
-.action button{
-    flex: 1;
-}
-
-.title{
-    justify-content: flex-start;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-}
-
-.title h5, .title h1{
-    font-family: 'Lexend', sans-serif;
-}
-
-.title h1{
-    font-size: 8vw;
+.sub-cont1 h1{
+    font-size: 9vw;
     font-weight: 600;
 }
 
-.title h5{
-    font-size: 3vw;
+.sub-cont1 h5{
+    margin-bottom: 1rem;
+    font-size: 4vw;
+    color: var(--grey);
 }
 
-@media (min-width: 640px) {
-    .row{
+.form-cont{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group div span{
+    cursor: pointer;
+    align-self: center;
+}
+
+.input-cont{
+    position: relative;
+    background-color: var(--white);
+    border-radius: 5px;
+}
+
+.input-cont input{
+    width: 93%;
+    padding: 3%;
+    border: 1px solid var(--grey);
+    background-color: var(--white);
+    border-radius: 5px;
+    outline: none;
+    color: var(--black);
+    font-size: 4vw;
+    transition: 0.5;
+}
+
+.label-span{
+    position: absolute;
+    left: 8px;
+    pointer-events: none;
+    font-size:4vw;
+    color: var(--grey);
+    text-transform: uppercase;
+    transition: 0.5s;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.input-cont input:valid ~ .label-span,
+.input-cont input:focus ~ .label-span{
+    background-color: var(--orange);
+    color: var(--white);
+    transform: translateX(5px) translateY(-150%);
+    font-size: 3vw;
+    padding: 0 5px;
+    border-radius: 2px;
+    letter-spacing: .2em;
+}
+
+.input-cont input:valid,
+.input-cont input:focus{
+    border: 1px solid var(--orange);
+}
+
+.fa{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.alert{
+    position: absolute;
+    color:rgb(226, 111, 111) ;
+    font-size: 3vw;
+    right: 0;
+}
+.form-group{
+    margin:0px 0px 10px 0px;
+}
+
+.buttons{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.submit, .cancel{
+    width: 48%;
+    padding: .5rem;
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: var(--grey);
+    cursor: pointer;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.submit:hover{
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+}
+
+.cancel:hover{
+    background-color: rgb(226, 111, 111);
+    color: var(--white);
+    border: none;
+}
+
+@media (min-width: 640px){
+    .flex-cont{
+        display: flex;
         flex-direction: row;
-        gap:10px;
+        justify-content: space-between;
     }
 
-    .title h1{
+    .col1,.col2{
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .alert{
+        font-size: 1.5vw;
+    }
+    .label{
+        font-size: 1.5vw;
+    }
+    .input-cont input{
         font-size: 2vw;
     }
+
+    .label-span{
+        font-size:1.8vw;
+    }
+
+    .input-cont input:valid ~ .label-span,
+    .input-cont input:focus ~ .label-span{
+        font-size: 1vw;
+    }
+    .sub-cont1 h1{
+        font-size: 4vw;
+    }
     
-    .title h5{
+    .sub-cont1 h5{
+        font-size: 2vw;
+    }
+}
+
+/* large */
+@media (min-width:1024px){
+
+    .input-cont input{
+        width: 96%;
+        font-size: 1.5vw;
+        padding: 2%;
+    }
+
+    .label-span{
+        font-size:1.3vw;
+    }
+
+    .input-cont input:valid ~ .label-span,
+    .input-cont input:focus ~ .label-span{
+        font-size: 1vw;
+        transform: translateX(5px) translateY(-160%);
+    }
+
+    .sub-cont1 h1{
+        font-size: 3vw;
+    }
+    
+    .sub-cont1 h5{
         font-size: 1vw;
     }
 }

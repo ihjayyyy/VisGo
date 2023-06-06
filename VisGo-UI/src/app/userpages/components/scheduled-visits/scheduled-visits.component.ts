@@ -7,6 +7,8 @@ import { MatSort } from '@angular/material/sort';
 import { CoreService } from 'src/app/core/core.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DetailsOfScheduledVisitsComponent } from '../details-of-scheduled-visits/details-of-scheduled-visits.component';
+import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -35,6 +37,9 @@ export class ScheduledVisitsComponent implements OnInit{
 
   data: Array<any> = [];
   dataById: any; 
+  user:any;
+  invites:any[] | undefined;
+  userID=this._authService.userID
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -44,51 +49,64 @@ export class ScheduledVisitsComponent implements OnInit{
   }
   
   constructor(private datePipe:DatePipe, 
-    private _inviteService: InviteService,
-    private _coreService:CoreService,
+    private toastr: ToastrService,
     private dialog: MatDialog,
+    private _authService: AuthService
     ){}
 
   ngOnInit(): void {
-    this.getInviteList()
+    // console.log(this._authService.userID)
+    this.getInvite()
   }
 
-  getInviteList(){
-    this._inviteService.getInvites().subscribe({
-      next: (res) =>{
-        this.dataSource = new MatTableDataSource(res)
-        this.data = res
-        // console.log(this.data)
+  getInvite(){
+    this._authService.GetbyId(this._authService.userID).subscribe({
+      next:(res)=>{
+        this.user = res
+        this.dataSource = new MatTableDataSource(this.user.Invites)
         this.dataSource.sort = this.sort
         this.dataSource.paginator = this.paginator
-      },
-      error: (err) =>[
-        console.log(err)
-      ]
+      }
     })
   }
 
-  deleteInvite(id:number){
-    this._inviteService.deleteInvite(id).subscribe({
-      next: (res) => {
-        this._coreService.openSnackBar('Invite Deleted succesfully!','done')
-        this.getInviteList()
+  deleteInvites(id: number) {
+    this._authService.DeleteInvite(id, this._authService.userID).subscribe({
+      next: () => {
+        this.toastr.success('Invite deleted successfully.');
+        this.getInvite();
       },
-
-      error: console.log
-    })
+      error: (err: any) => {
+        console.error(err);
+        this.toastr.error('Error occurred while deleting invite.', 'Error');
+      }
+    });
   }
 
-  getInvitebyId(id:number){
-    this._inviteService.getInvitebyId(id).subscribe({
-      next: (res)=>{
-        this.dataById = res
-        this._inviteService.dataById = this.dataById
-        console.log(this._inviteService.dataById)
-        this.dialog.open(DetailsOfScheduledVisitsComponent,{panelClass: 'custom-dialog',})
+  getInvitebyId(id: number) {
+    this._authService.GetbyId(this._authService.userID).subscribe({
+      next: (res: any) => {
+        if (res && res.Invites) {
+          const invite = res.Invites.find((invite: any) => invite.id === id);
+          if (invite) {
+            this.dataById = invite;
+            this._authService.SetInviteDatabyId(this.dataById)
+            this.dialog.open(DetailsOfScheduledVisitsComponent)
+            // console.log(this.dataById);
+          } else {
+            console.log('Invite not found.');
+          }
+        } else {
+          console.log('User not found or Invites array not available.');
+        }
       },
-      error:console.log
-    })
-
+      error: (err: any) => {
+        console.error(err);
+        this.toastr.error('Error occurred while getting invite by ID.', 'Error');
+      }
+    });
   }
+
+
+ 
 }

@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { CreateInviteComponent } from 'src/app/userpages/components/create-invite/create-invite.component';
 
 @Component({
@@ -24,11 +25,18 @@ export class HeaderComponent {
     this.daily = false;
   }
   
-constructor(private datePipe:DatePipe, private dialog: MatDialog){}
+constructor(private datePipe:DatePipe, private dialog: MatDialog, private router:Router){}
 
 
 
 openAddSched(){
   this.dialog.open(CreateInviteComponent)
+}
+
+clearSession(){
+  sessionStorage.clear();
+  this.router.navigate(['']).then(() => {
+    location.reload();
+  });
 }
 }

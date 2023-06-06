@@ -1,3 +1,7 @@
+@import url(../details-of-visits/details-of-visits.component.css);
+*{
+    background-color: var(--white);
+}
 h1,h2,h3,h4,h5{
     margin: 0;
     font-family: 'Lexend', sans-serif;
@@ -5,52 +9,38 @@ h1,h2,h3,h4,h5{
     text-align: center;
 }
 
-
-.cont2{
-    background-color: var(--white);
-    padding: 20px;
+.p{
+    margin: 0;
 }
-
-.title{
-    border: solid 1px var(--black);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: .5rem;
+.contents-cont{
+    width: 100%;
+    padding: 0;
 }
-
-.title h2{
-    font-size: 4.5vw;
-    font-weight: 600;
-}
-
-.title img{
-    width: 15%;
-}
-
-.content{
-    padding: .5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: solid 1px var(--black);
-    border-top:none ;
-}
-
-.content li{
-    margin: .1rem 0;
-    font-size: 4vw;
-    font-weight: 600;
-    letter-spacing: 1px;
-    word-wrap: break-word;
-    list-style-type: none;
-}
-
-.content span{
-    color: var(--grey);
-}
-
 .content img{
-    width: 80%;
-    margin: 0 auto;
+    width: 70%;
+}
+.cont2{
+    padding: 20px;
+    margin: 0;
+}
+.col2{
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 640px) {
+    .col1{
+        gap: .5rem;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .col1{
+        gap: 1rem;
+    }
+    .content img{
+        width: 60%;
+    }
 }

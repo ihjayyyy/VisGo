@@ -8,7 +8,7 @@ import { RegisterComponent } from './auth/components/register/register.component
 import { LoginComponent } from './auth/components/login/login.component';
 import { UserPagesModule } from './userpages/userpages.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material/dialog';
+import { ToastrModule} from 'ngx-toastr'
 import {  HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from 'src/material.module';
 
@@ -27,7 +27,9 @@ import { MaterialModule } from 'src/material.module';
     UserPagesModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    ToastrModule.forRoot(),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

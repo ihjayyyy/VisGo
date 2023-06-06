@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,8 @@ import { Observable, map } from 'rxjs';
 export class InviteService {
 
   constructor(private _http: HttpClient) { }
-  apiurl='http://localhost:3000/Invites'
+  apiurl='http://localhost:3000/invites'
+
   addInvites(data: any):Observable<any>{
     return this._http.post(this.apiurl, data)
   }

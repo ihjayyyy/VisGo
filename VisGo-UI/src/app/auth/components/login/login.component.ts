@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import ValidateForm from 'src/app/helpers/validateForm';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -18,12 +20,9 @@ export class LoginComponent {
   visitor: boolean = false;
   host: boolean = true;
 
-  dummyAcc: any = {
-    userName: '',
-    password: ''
-  };
+  userdata:any;
 
-  constructor(fb: FormBuilder, private router: Router) {
+  constructor(fb: FormBuilder, private router: Router, private service:AuthService, private toastr: ToastrService) {
     this.loginForm = fb.group({
       uname: ['', Validators.required],
       pass: ['', Validators.required],
@@ -57,19 +56,27 @@ export class LoginComponent {
   }
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
-      this.dummyAcc.userName = this.loginForm.value.uname;
-      this.dummyAcc.password = this.loginForm.value.pass;
-      if (this.dummyAcc.userName == 'user123' && this.dummyAcc.password == 'user123') {
-        this.loginForm.reset();
-        this.router.navigate(['/userPages/dashboard']);
-      }
-      else {
-        this.loginForm.reset();
-        alert("Invalid Username and Password");
-      }
-    }
-    else {
+      this.service.GetbyId(this.loginForm.value.uname).subscribe(
+        (res) => {
+          this.userdata = res;
+          if (this.userdata.pass === this.loginForm.value.pass) {
+            sessionStorage.setItem('username', this.userdata.id);
+            sessionStorage.setItem('accountype', this.userdata.accType);
+            this.router.navigate(['/userPages/dashboard']).then(() => {
+              location.reload();
+            });
+          } else {
+            this.toastr.error('Invalid Credentials!');
+            ValidateForm.validateAllFormFields(this.loginForm);
+          }
+        },
+        (error) => {
+          this.toastr.error('Invalid Credentials!');
+          ValidateForm.validateAllFormFields(this.loginForm);
+        }
+      );
+    } else {
+      this.toastr.error('Invalid Credentials!');
       ValidateForm.validateAllFormFields(this.loginForm);
     }
   }

@@ -4,7 +4,6 @@
     --black:#000000;
     --white:#FFF1E1;
     --grey: rgba(0, 0, 0, 0.5);
-    
 }
 *{
     margin: 0;
@@ -21,3 +20,17 @@ body{
     height: 100%;
     background-color: var(--white);
 }
+
+.mat-input-element {
+    position: relative;
+  }
+  
+  .mat-input-element::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff0000; /* Replace with your desired border color */
+  }

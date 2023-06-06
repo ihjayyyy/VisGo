@@ -18,25 +18,89 @@
   },
   "Invites": [
     {
-      "name": "John Doe",
-      "email": "Johndoe@gmail.com",
-      "date": "2023-05-28T16:00:00.000Z",
-      "time": "12:00nn",
-      "number": "12345678912",
-      "purpose": "Birthday",
-      "id": 1
+      "name": "dasdasd",
+      "email": "asdasdasd",
+      "date": "2023-05-05",
+      "time": "07:52",
+      "number": "asdasdasd",
+      "purpose": "asdasdasd",
+      "id": 5
     },
     {
-      "name": "Cleo Panoringan",
-      "email": "Cleopanoringan@gmail.com",
-      "date": "2023-05-09T16:00:00.000Z",
-      "time": "1:00pm",
-      "number": "1234567897",
-      "purpose": "Inuman",
-      "id": 2
+      "name": "adasdas",
+      "email": "asdasdasdasdasd",
+      "date": "2023-05-02",
+      "time": "23:52",
+      "number": "asdasds",
+      "purpose": "asdasdasdas",
+      "id": 6
     }
   ],
-  "user":[
-
+  "Hostuser": [
+    {
+      "name": "ejay123",
+      "email": "ejay123@gmail.com",
+      "id": "ejay123",
+      "pass": "ejay123",
+      "conPass": "ejay123",
+      "accType": "Host",
+      "Invites": [
+        {
+          "name": "John Doe",
+          "email": "Johndoe@gmail.com",
+          "date": "2023-05-28T16:00:00.000Z",
+          "time": "12:00nn",
+          "number": "12345678912",
+          "purpose": "Birthday",
+          "id": 1
+        },
+        {
+          "name": "asdasd",
+          "email": "asdasdasdas",
+          "date": "2023-05-11",
+          "time": "10:07",
+          "number": "asdasd",
+          "purpose": "asdasdasd",
+          "id": 3
+        }
+      ]
+    },
+    {
+      "name": "user123",
+      "email": "user123@gmail.com",
+      "id": "user123",
+      "pass": "user123",
+      "conPass": "user123",
+      "accType": "Host",
+      "Invites": [
+        {
+          "name": "John Doe2",
+          "email": "Johndoe2@gmail.com",
+          "date": "2023-05-28T16:00:00.000Z",
+          "time": "12:00nn",
+          "number": "12345678912",
+          "purpose": "Birthday",
+          "id": 1
+        },
+        {
+          "name": "asdasd",
+          "email": "asdasd",
+          "date": "2023-05-31",
+          "time": "04:08",
+          "number": "asdas",
+          "purpose": "asdasd",
+          "id": 2
+        },
+        {
+          "name": "asdasdasd",
+          "email": "asdasdasdasd",
+          "date": "2023-06-05",
+          "time": "04:13",
+          "number": "asdasdassa",
+          "purpose": "dasdasdasdasdas",
+          "id": 3
+        }
+      ]
+    }
   ]
 }

@@ -1,49 +1,110 @@
-<div mat-dialog-title class="title">
-    <h1>Create Invite</h1>
-    <h5>You will be sent a confirmation notification when
-        your reservation has been confirmed</h5>
-</div>
-<form [formGroup]="inviteForm" (ngSubmit)="onFormSubmit()">
-    <div class="cont" mat-dialog-content >
-        <div class="row">
-            <mat-form-field appearance="outline" class="form-field">
-                <mat-label>Visitor's Name</mat-label>
-                <input matInput type="text" placeholder="Ex. John Doe" formControlName="name">
-            </mat-form-field>
+<div class="main-cont">
 
-            <mat-form-field appearance="outline" class="form-field">
-                <mat-label>Date of Visit</mat-label>
-                <input matInput [matDatepicker]="picker" formControlName="date">
-                <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-        </div>
+    <div class="sub-cont1">
+        <h1>Create Invites</h1>
+        <h5>You will be sent a confirmation notification when
+            your reservation has been confirmed</h5>
+        <form class="form-cont"  [formGroup]="inviteForm" (ngSubmit)="onFormSubmit()" >
+            <div class="flex-cont">
+                <div class="col1">
+                    <div class="form-group">
+                        <div class="input-cont">
+                            <input type="text" formControlName="name" required>
+                            <span class="label-span">name of visitor</span>
+                            <!-- <div class="alert" *ngIf="fc.name.invalid && (fc.name.dirty)">
+                                <div *ngIf="fc.name.errors?.['required']">
+                                    Name is required.
+                                </div>
+                                <div *ngIf="fc.name.errors?.['minlength']">
+                                    Name must be at least 5 characters long.
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
 
-        <div class="row">
-            <mat-form-field appearance="outline" class="form-field">
-                <mat-label>Email of Visitor</mat-label>
-                <input matInput type="text" placeholder="Ex. johndoe@gmail.com" formControlName="email">
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="form-field">
-                <mat-label>Time of Visit</mat-label>
-                <input matInput type="text" placeholder="Ex. John Doe" formControlName="time">
-            </mat-form-field>
-        </div>
-        
-        <div class="row">
-            <mat-form-field appearance="outline" class="form-field">
-                <mat-label>Phone # of Visitor</mat-label>
-                <input matInput type="text" placeholder="Ex. 0912345678" formControlName="number">
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="form-field">
-                <mat-label>Purpose of Visit</mat-label>
-                <input matInput type="text" placeholder="Ex. Family Gathering" formControlName="purpose">
-            </mat-form-field>
-        </div>
+                    <div class="form-group">
+                        <div class="input-cont">
+                            <input type="tel" formControlName="number" required>
+                            <span class="label-span">Phone# of visitor</span>
+                            <!-- <div class="alert" *ngIf="fc.name.invalid && (fc.name.dirty)">
+                                <div *ngIf="fc.name.errors?.['required']">
+                                    Name is required.
+                                </div>
+                                <div *ngIf="fc.name.errors?.['minlength']">
+                                    Name must be at least 5 characters long.
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-cont">
+                            <input type="date" formControlName="date" required>
+                            <span class="label-span">Date of Visit</span>
+                            <!-- <div class="alert" *ngIf="fc.name.invalid && (fc.name.dirty)">
+                                <div *ngIf="fc.name.errors?.['required']">
+                                    Name is required.
+                                </div>
+                                <div *ngIf="fc.name.errors?.['minlength']">
+                                    Name must be at least 5 characters long.
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col2">
+                    <div class="form-group">
+                        <div class="input-cont">
+                            <input type="email" formControlName="email" required>
+                            <span class="label-span">email of visitor</span>
+                            <!-- <div class="alert" *ngIf="fc.name.invalid && (fc.name.dirty)">
+                                <div *ngIf="fc.name.errors?.['required']">
+                                    Name is required.
+                                </div>
+                                <div *ngIf="fc.name.errors?.['minlength']">
+                                    Name must be at least 5 characters long.
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-cont">
+                            <input type="text" formControlName="purpose" required>
+                            <span class="label-span">purpose of visit</span>
+                            <!-- <div class="alert" *ngIf="fc.name.invalid && (fc.name.dirty)">
+                                <div *ngIf="fc.name.errors?.['required']">
+                                    Name is required.
+                                </div>
+                                <div *ngIf="fc.name.errors?.['minlength']">
+                                    Name must be at least 5 characters long.
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <div class="input-cont">
+                            <input type="time" formControlName="time" required>
+                            <span class="label-span">time of Visit</span>
+                            <!-- <div class="alert" *ngIf="fc.name.invalid && (fc.name.dirty)">
+                                <div *ngIf="fc.name.errors?.['required']">
+                                    Name is required.
+                                </div>
+                                <div *ngIf="fc.name.errors?.['minlength']">
+                                    Name must be at least 5 characters long.
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="submit" type="submit" >Submit</button>
+                <button class="cancel" type="button"  [mat-dialog-close]="false">Cancel </button>
+            </div>
+
+        </form>
+
     </div>
-    <div mat-dialog-actions class="action">
-        <button mat-stroked-button type="button" [mat-dialog-close]="false">Cancel</button>
-        <button mat-stroked-button color="primary" type="submit">Submit</button>
-    </div>
-</form>

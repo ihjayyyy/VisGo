@@ -9,95 +9,91 @@
     <div class="main-cont">
         <div class="sub-cont1">
             <p>Already have account? <span routerLink="/">Sign in here!</span></p>
-            <p>Create account as a Visitor? <span (click)="onClick()">Sign up here!</span></p>
+            <p>Create account as a {{altType}}? <span (click)="onClick()">Sign up here!</span></p>
         </div>
 
         <div class="sub-cont2">
             <h1>Create an <span>{{accType}} Account</span></h1>
-            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <form class="form-cont" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
 
                 <div class="form-group">
-                    <label for="name"><b>Name <span>(FN & LN)</span></b></label>
-
                     <div class="input-cont">
-                        <input type="text" formControlName="name">
-                    </div>
-
-                    <div class="alert" *ngIf="fc.name.invalid && (fc.name.dirty || fc.name.touched)">
-                        <div *ngIf="fc.name.errors?.['required']">
-                            Name is required.
-                        </div>
-                        <div *ngIf="fc.name.errors?.['minlength']">
-                            Name must be at least 5 characters long.
+                        <input type="text" formControlName="name" required>
+                        <span class="label-span">name</span>
+                        <div class="alert" *ngIf="fc.name.invalid && (fc.name.dirty)">
+                            <div *ngIf="fc.name.errors?.['required']">
+                                Name is required.
+                            </div>
+                            <div *ngIf="fc.name.errors?.['minlength']">
+                                Name must be at least 5 characters long.
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="email"><b>Email</b></label>
-
                     <div class="input-cont">
-                        <input type="text" name="email" formControlName="email">
+                        <input type="text" name="email" formControlName="email" required="">
+                        <span class="label-span">email</span>
+                        <div class="alert" *ngIf="fc.email.invalid && (fc.email.dirty)">
+                            <div *ngIf="fc.email.errors?.['required']">
+                                Email is required.
+                            </div>
+                            <div *ngIf="fc.email.errors?.['pattern']">
+                                Invalid Email Ex. email@gmail.com
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="alert" *ngIf="fc.email.invalid && (fc.email.dirty || fc.email.touched)">
-                        <div *ngIf="fc.email.errors?.['required']">
-                            Email is required.
-                        </div>
-                        <div *ngIf="fc.email.errors?.['pattern']">
-                            Invalid Email Ex. email@gmail.com
-                        </div>
-                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="uname"><b>Username</b></label>
 
                     <div class="input-cont">
-                        <input type="text" name="uname" formControlName="uname">
+                        <input type="text" name="id" formControlName="id" required="">
+                        <span class="label-span">username</span>
+
+                        <div class="alert" *ngIf="fc.id.invalid && (fc.id.dirty)">
+                            <div *ngIf="fc.id.errors?.['required']">
+                                Username is required.
+                            </div>
+                            <div *ngIf="fc.id.errors?.['minlength']">
+                                Username must be at least 5 characters long.
+                            </div>
+                        </div>
                     </div>
 
-
-                    <div class="alert" *ngIf="fc.uname.invalid && (fc.uname.dirty || fc.uname.touched)">
-                        <div *ngIf="fc.uname.errors?.['required']">
-                            Username is required.
-                        </div>
-                        <div *ngIf="fc.uname.errors?.['minlength']">
-                            Username must be at least 5 characters long.
-                        </div>
-                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="pass"><b>Password</b></label>
 
                     <div class="input-cont">
-                        <input [type]="passType" name="pass" required>
+                        <input [type]="passType" formControlName="pass" name="pass" required>
+                        <span class="label-span">Password</span>
+
                         <span (click)="hideShowPass()" class="fa {{passEyeIcon}}"></span>
-                    </div>
-
-                    
-                    <div class="alert" *ngIf="fc.pass.invalid && (fc.pass.dirty || fc.pass.touched)">
-                        <div *ngIf="fc.pass.errors?.['required']">
-                            Password is required.
+                        <div class="alert" *ngIf="fc.pass.invalid && (fc.pass.dirty)">
+                            <div *ngIf="fc.pass.errors?.['required']">
+                                Password is required.
+                            </div>
                         </div>
                     </div>
+
                 </div>
 
                 <div class="form-group">      
-                    <label for="con-pass"><b>Confirm Password</b></label>
 
                     <div class="input-cont">
-                        <input [type]="conpassType" name="conpass" required>
+                        <input [type]="conpassType" formControlName="conPass" name="conpass" required>
+                        <span class="label-span">Confirm Password</span>
                         <span (click)="hideShowConPass()" class="fa {{conpassEyeIcon}}"></span>
-                    </div>
-
-
-                    <div class="alert" *ngIf="fc.conPass.invalid && (fc.conPass.dirty || fc.conPass.touched)">
-                        <div *ngIf="fc.conPass.errors?.['required']">
-                            Confirm your Password.
+                        <div class="alert" *ngIf="fc.conPass.invalid && (fc.conPass.dirty)">
+                            <div *ngIf="fc.conPass.errors?.['required']">
+                                Confirm your Password.
+                            </div>
                         </div>
                     </div>
+
                 </div>
 
                 <label class="label">
