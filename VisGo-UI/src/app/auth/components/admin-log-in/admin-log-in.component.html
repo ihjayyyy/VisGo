@@ -16,29 +16,46 @@
         </div>
 
         <div class="sub-cont2">
+            <form class="form-cont" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
 
-            <label for="property-name"><b>Select a Village/Building</b></label>
-                <select name="property" id="property">
-                    <optgroup label="Villages">
-                        <option value="Camella">Camella</option>
-                        <option value="Lancaster">Lancaster</option>
-                      </optgroup>
-                      <optgroup label="Buildings">
-                        <option value="Court Plaza Dormitory">Court Plaza Dormitory</option>
-                        <option value="CMDL's Dormitory">CMDL's Dormitory</option>
-                      </optgroup>
-                </select>
+                <div class="form-group">
 
-            <label for="uname"><b>Username/Email</b></label>
-            <input type="text" name="uname" required>
+                    <div class="input-cont">
+                        <input type="text" name="id" formControlName="id" required="">
+                        <span class="label-span">username</span>
 
-            <label for="pass"><b>Password</b></label>
-            <input type="password" name="uname" required>
+                        <div class="alert" *ngIf="fc.id.invalid && (fc.id.dirty)">
+                            <div *ngIf="fc.id.errors?.['required']">
+                                Username is required.
+                            </div>
+                            <div *ngIf="fc.id.errors?.['minlength']">
+                                Username must be at least 5 characters long.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <div class="input-cont">
+                        <input [type]="passType" formControlName="pass" name="pass" required>
+                        <span class="label-span">Password</span>
+
+                        <span (click)="hideShowPass()" class="fa {{passEyeIcon}}"></span>
+                        <div class="alert" *ngIf="fc.pass.invalid && (fc.pass.dirty)">
+                            <div *ngIf="fc.pass.errors?.['required']">
+                                Password is required.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="submit-btn" type="submit" (click)="onSubmit">Submitt</button>
+
+            </form>
+
         </div>
-
-        <div class="sub-cont3">
-            <button class="log-btn">Log-In</button>
-        </div>
-        
     </div>
 </body>

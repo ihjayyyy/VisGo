@@ -18,11 +18,11 @@
             <img src="../../../../assets/images/schedule.png" alt="">
             <p>Schedule</p>
         </div>
-        <div class="button" routerLinkActive="clicked" routerLink="/userPages/pending">
+        <div class="button pending" routerLinkActive="clicked" routerLink="/userPages/pending" [ngClass]="Host ? 'unhide' : ''">
             <img src="../../../assets/images/pending.png" alt="">
             <p>Pending </p>
         </div>
-        <div class="button" routerLinkActive="clicked" routerLink="/userPages/location">
+        <div class="button track" routerLinkActive="clicked" routerLink="/userPages/location" [ngClass]="Host ? 'unhide' : ''">
             <img src="../../../assets/images/location.png" alt="">
             <p>Location</p>
         </div>

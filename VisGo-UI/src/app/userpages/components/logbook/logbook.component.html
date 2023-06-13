@@ -29,99 +29,73 @@
                     <li>Date: <span> April 24,2023 </span> </li>
                     <li>Time: <span> 12:00nn </span> </li>
                 </ul>
-                    
-                <ul class="content">
-                    <li>#: <span> 1 </span> </li>
-                    <li>Visitor: <span> Barack Obama </span> </li>
-                    <li>Email: <span> Barackobama@gmail.com </span> </li>
-                    <li>Date: <span> April 24,2023 </span> </li>
-                    <li>Time: <span> 12:00nn </span> </li>
-                </ul>
-                    
-                <ul class="content">
-                    <li>#: <span> 1 </span> </li>
-                    <li>Visitor: <span> Barack Obama </span> </li>
-                    <li>Email: <span> Barackobama@gmail.com </span> </li>
-                    <li>Date: <span> April 24,2023 </span> </li>
-                    <li>Time: <span> 12:00nn </span> </li>
-                </ul>
-                    
-                <ul class="content">
-                    <li>#: <span> 1 </span> </li>
-                    <li>Visitor: <span> Barack Obama </span> </li>
-                    <li>Email: <span> Barackobama@gmail.com </span> </li>
-                    <li>Date: <span> April 24,2023 </span> </li>
-                    <li>Time: <span> 12:00nn </span> </li>
-                </ul>
-                    
-                <ul class="content">
-                    <li>#: <span> 1 </span> </li>
-                    <li>Visitor: <span> Barack Obama </span> </li>
-                    <li>Email: <span> Barackobama@gmail.com </span> </li>
-                    <li>Date: <span> April 24,2023 </span> </li>
-                    <li>Time: <span> 12:00nn </span> </li>
-                </ul>
-                    
-                <ul class="content">
-                    <li>#: <span> 1 </span> </li>
-                    <li>Visitor: <span> Barack Obama </span> </li>
-                    <li>Email: <span> Barackobama@gmail.com </span> </li>
-                    <li>Date: <span> April 24,2023 </span> </li>
-                    <li>Time: <span> 12:00nn </span> </li>
-                </ul>
-                
 
-                <table class="table">
-                    <tr>
-                        <th class="col-1">#</th>
-                        <th>Visitor</th>
-                        <th>Acc ID</th>
-                        <th>Date</th>
-                        <th>Check In</th>
-                        <th>Check Out</th>
-                        <th>Status</th>
-                    </tr>
-                    <tr>
-                        <td class="col-1">1</td>
-                        <td>Barack Obama</td>
-                        <td>123456789</td>
-                        <td>04/14/23</td>
-                        <td>12:00pm</td>
-                        <td>12:00pm</td>
-                        <td>Complete</td>
-                        <td routerLink="/userPages/visits-details"><span>View detail</span></td>
-                    </tr>
-                    <tr>
-                        <td class="col-1">1</td>
-                        <td>Barack Obamad</td>
-                        <td>123456789</td>
-                        <td>04/14/23</td>
-                        <td>12:00pm</td>
-                        <td>12:00pm</td>
-                        <td>Complete</td>
-                        <td><span>View detail</span></td>
-                    </tr>
-                    <tr>
-                        <td class="col-1">1</td>
-                        <td>Barack Obama</td>
-                        <td>123456789</td>
-                        <td>04/14/23</td>
-                        <td>12:00pm</td>
-                        <td>12:00pm</td>
-                        <td>Complete</td>
-                        <td><span>View detail</span></td>
-                    </tr>
-                    <tr>
-                        <td class="col-1">1</td>
-                        <td>Barack Obama</td>
-                        <td>123456789</td>
-                        <td>04/14/23</td>
-                        <td>12:00pm</td>
-                        <td>12:00pm</td>
-                        <td>Complete</td>
-                        <td><span>View detail</span></td>
-                    </tr>
-                </table>
+                <div class="mat-elevation-z8">
+                    <table mat-table [dataSource]="dataSource" class="table">
+                  
+                      <!-- Position Column -->
+                      <ng-container matColumnDef="id" class="">
+                        <th class="col-1" mat-header-cell *matHeaderCellDef> # </th>
+                        <td class="col-1" mat-cell *matCellDef="let data"> {{data.id}} </td>
+                      </ng-container>
+                  
+                      <!-- Name Column -->
+                      <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Name </th>
+                        <td mat-cell *matCellDef="let data"> {{data.name}} </td>
+                      </ng-container>
+                  
+                      <!-- Email Column -->
+                      <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef> Email </th>
+                        <td mat-cell *matCellDef="let data"> {{data.email}} </td>
+                      </ng-container>
+                  
+                      <!-- Symbol Column -->
+                      <ng-container matColumnDef="number">
+                        <th mat-header-cell *matHeaderCellDef> Number </th>
+                        <td mat-cell *matCellDef="let data"> {{data.number}} </td>
+                      </ng-container>
+  
+                      <ng-container matColumnDef="Check In">
+                        <th mat-header-cell *matHeaderCellDef> Check IN </th>
+                        <td mat-cell *matCellDef="let data" ><button [ngClass]="data.dci ? 'hide' : ''" (click)="checkIn(data)">Check In</button>
+                          {{data.timeIn}}  {{ data.dci}} </td>
+                      </ng-container>
+  
+            
+
+                      <ng-container matColumnDef="dateCO">
+                        <th mat-header-cell *matHeaderCellDef> Check Out </th>
+                        <td mat-cell *matCellDef="let data" > <button [ngClass]="data.dco ? 'hide' : ''" (click)="checkOut(data)">Check Out</button>
+                          {{data.timeOut}} {{ data.dco}} </td>
+                      </ng-container>
+
+                      <ng-container matColumnDef="status">
+                        <th mat-header-cell *matHeaderCellDef> Status </th>
+                        <td mat-cell *matCellDef="let data"> {{data.status}} </td>
+                      </ng-container>
+  
+                      <ng-container matColumnDef="action" >
+                        <th mat-header-cell *matHeaderCellDef>  </th>
+                        <td mat-cell *matCellDef="let data"> 
+
+                            <button (click)="getLogbookbyId(data.id)" class="view-btn">
+                                View Details
+                            </button>
+                        </td>
+                      </ng-container>
+                  
+                      <tr class="t-row" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr class="t-row"  mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                  
+                    <mat-paginator [pageSizeOptions]="[10,15,20]"
+                                    showFirstLastButtons
+                                    aria-label="Select page of periodic datas"
+                                    class="paginator">
+                    </mat-paginator>
+                  </div>
             </div>
         </div>
     </div>

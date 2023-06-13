@@ -36,7 +36,7 @@
       "id": 6
     }
   ],
-  "Hostuser": [
+  "Host": [
     {
       "name": "ejay123",
       "email": "ejay123@gmail.com",
@@ -55,13 +55,27 @@
           "id": 1
         },
         {
-          "name": "asdasd",
-          "email": "asdasdasdas",
-          "date": "2023-05-11",
-          "time": "10:07",
-          "number": "asdasd",
-          "purpose": "asdasdasd",
-          "id": 3
+          "name": "hfuhgyuf",
+          "email": "adasdasd",
+          "date": "2023-06-05",
+          "time": "14:05",
+          "number": "asdasdasd",
+          "purpose": "asdsadasd",
+          "id": 2
+        }
+      ],
+      "Logbook": [
+        {
+          "name": "John Doe",
+          "email": "Johndoe@gmail.com",
+          "dci": "2023-05-28T16:00:00.000Z",
+          "timeIn": "12:00nn",
+          "dco": "2023-05-28T16:00:00.000Z",
+          "timeOut": "1:00pm",
+          "number": "12345678912",
+          "purpose": "Birthday",
+          "id": 1,
+          "status": "Ongoing"
         }
       ]
     },
@@ -73,15 +87,6 @@
       "conPass": "user123",
       "accType": "Host",
       "Invites": [
-        {
-          "name": "John Doe2",
-          "email": "Johndoe2@gmail.com",
-          "date": "2023-05-28T16:00:00.000Z",
-          "time": "12:00nn",
-          "number": "12345678912",
-          "purpose": "Birthday",
-          "id": 1
-        },
         {
           "name": "asdasd",
           "email": "asdasd",
@@ -100,7 +105,51 @@
           "purpose": "dasdasdasdasdas",
           "id": 3
         }
+      ],
+      "Logbook": [
+        {
+          "name": "John Doe2",
+          "email": "Johndoe2@gmail.com",
+          "dci": "2023-06-13",
+          "timeIn": "04:48 PM",
+          "dco": "2023-06-13",
+          "timeOut": "04:48 PM",
+          "number": "12345678912",
+          "purpose": "Birthday",
+          "id": 1,
+          "status": "Ongoing"
+        },
+        {
+          "name": "John Doe2",
+          "email": "Johndoe2@gmail.com",
+          "dci": "2023-06-13",
+          "timeIn": "04:48 PM",
+          "dco": "2023-06-13",
+          "timeOut": "04:48 PM",
+          "number": "12345678912",
+          "purpose": "Birthday",
+          "id": 2,
+          "status": "Ongoing"
+        }
       ]
+    },
+    {
+      "name": "Visitor",
+      "email": "visitor@gmail.com",
+      "id": "visitor",
+      "pass": "visitor123",
+      "conPass": "visitor123",
+      "accType": "Visitor"
+    }
+  ],
+  "Visitor": [
+    {
+      "name": "ejay123",
+      "email": "ejay123@gmail.com",
+      "id": "ejay123",
+      "pass": "ejay123",
+      "conPass": "ejay123",
+      "accType": "Host"
     }
   ]
 }

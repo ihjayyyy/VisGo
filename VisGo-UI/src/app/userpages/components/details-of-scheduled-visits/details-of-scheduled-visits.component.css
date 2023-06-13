@@ -1,32 +1,10 @@
 @import url(../details-of-visits/details-of-visits.component.css);
-*{
-    background-color: var(--white);
-}
-h1,h2,h3,h4,h5{
-    margin: 0;
-    font-family: 'Lexend', sans-serif;
-    line-height: 100%;
-    text-align: center;
-}
 
-.p{
-    margin: 0;
-}
-.contents-cont{
-    width: 100%;
-    padding: 0;
-}
 .content img{
     width: 70%;
+    margin: auto;
 }
-.cont2{
-    padding: 20px;
-    margin: 0;
-}
-.col2{
-    align-items: center;
-    justify-content: center;
-}
+
 
 @media (min-width: 640px) {
     .col1{

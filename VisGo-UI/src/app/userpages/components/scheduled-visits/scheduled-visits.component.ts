@@ -1,6 +1,4 @@
-import { DatePipe } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { InviteService } from 'src/app/services/invite.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
@@ -17,20 +15,20 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./scheduled-visits.component.css']
 })
 export class ScheduledVisitsComponent implements OnInit{
-  public currentDate = this.datePipe.transform(new Date(),"yyyy-MM-dd")
-  public currentMonth = this.datePipe.transform(new Date(),"yyyy-MM")
-  daily: boolean = false;
-  monthly: boolean = true;
+  // public currentDate = this.datePipe.transform(new Date(),"yyyy-MM-dd")
+  // public currentMonth = this.datePipe.transform(new Date(),"yyyy-MM")
+  // daily: boolean = false;
+  // monthly: boolean = true;
 
-  Dselected() {
-    this.daily = true;
-    this.monthly = false;
-  }
+  // Dselected() {
+  //   this.daily = true;
+  //   this.monthly = false;
+  // }
 
-  Mselected() {
-    this.monthly = true;
-    this.daily = false;
-  }
+  // Mselected() {
+  //   this.monthly = true;
+  //   this.daily = false;
+  // }
 
   displayedColumns: string[] = ['id', 'name', 'email','number', 'date', 'time', 'action', 'delete'];
   dataSource = new MatTableDataSource<any>;
@@ -38,8 +36,6 @@ export class ScheduledVisitsComponent implements OnInit{
   data: Array<any> = [];
   dataById: any; 
   user:any;
-  invites:any[] | undefined;
-  userID=this._authService.userID
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -48,7 +44,7 @@ export class ScheduledVisitsComponent implements OnInit{
     this.dataSource.paginator = this.paginator;
   }
   
-  constructor(private datePipe:DatePipe, 
+  constructor(
     private toastr: ToastrService,
     private dialog: MatDialog,
     private _authService: AuthService
@@ -60,9 +56,10 @@ export class ScheduledVisitsComponent implements OnInit{
   }
 
   getInvite(){
-    this._authService.GetbyId(this._authService.userID).subscribe({
+    this._authService.GetDatabyId(this._authService.userID).subscribe({
       next:(res)=>{
         this.user = res
+        this.data = this.user.Invites
         this.dataSource = new MatTableDataSource(this.user.Invites)
         this.dataSource.sort = this.sort
         this.dataSource.paginator = this.paginator
@@ -84,7 +81,7 @@ export class ScheduledVisitsComponent implements OnInit{
   }
 
   getInvitebyId(id: number) {
-    this._authService.GetbyId(this._authService.userID).subscribe({
+    this._authService.GetDatabyId(this._authService.userID).subscribe({
       next: (res: any) => {
         if (res && res.Invites) {
           const invite = res.Invites.find((invite: any) => invite.id === id);

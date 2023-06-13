@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { LocationTrackingComponent } from '../location-tracking/location-tracking.component';
 
 @Component({
   selector: 'app-location',
@@ -12,5 +14,13 @@ export class LocationComponent {
   selected(){
     this.daily = !this.daily;
     this.monthly = !this.monthly;
+  }
+
+  constructor(
+    private dialog: MatDialog,
+    ){}
+
+  viewDetails(){
+    this.dialog.open(LocationTrackingComponent)
   }
 }

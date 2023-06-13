@@ -13,7 +13,7 @@
     
             <div class="contents-cont">
     
-                <ul class="content" routerLink="/userPages/location-tracking">
+                <ul class="content" (click)="viewDetails()">
                     <li>#: <span> 1 </span> </li>
                     <li>Visitor: <span> Barack Obama </span> </li>
                     <li>Email: <span> Barackobama@gmail.com </span> </li>
@@ -78,7 +78,7 @@
                         <td>123456789</td>
                         <td>04/14/23</td>
                         <td>12:00pm</td>
-                        <td routerLink="/userPages/location-tracking"><span>View Live Location</span></td>
+                        <td (click)="viewDetails()"><span>View Live Location</span></td>
                     </tr>
                     <tr>
                         <td class="col-1">1</td>

@@ -16,7 +16,7 @@ export class LoginComponent {
   isText: boolean = false;
   eyeIcon: string = "fa-eye-slash";
   loginForm!: any;
-  accType: string = "HOST";
+  accType: string = "Host";
   visitor: boolean = false;
   host: boolean = true;
 
@@ -45,38 +45,51 @@ export class LoginComponent {
   Vselected() {
     this.visitor = true;
     this.host = false;
-    this.accType = 'VISITOR';
+    this.accType = 'Visitor';
   }
 
   Hselected() {
     this.visitor = false;
     this.host = true;
-    this.accType = 'HOST';
+    this.accType = 'Host';
 
   }
   onSubmit() {
     if (this.loginForm.valid) {
-      this.service.GetbyId(this.loginForm.value.uname).subscribe(
+      this.service.GetDatabyId(this.loginForm.value.uname).subscribe(
         (res) => {
           this.userdata = res;
-          if (this.userdata.pass === this.loginForm.value.pass) {
-            sessionStorage.setItem('username', this.userdata.id);
-            sessionStorage.setItem('accountype', this.userdata.accType);
-            this.router.navigate(['/userPages/dashboard']).then(() => {
+          console.log(this.userdata.accType)
+          console.log(this.accType)
+          if(this.userdata.accType === this.accType){
+            if (this.userdata.pass === this.loginForm.value.pass) {
+              sessionStorage.setItem('username', this.userdata.id);
+              sessionStorage.setItem('accountType', this.userdata.accType);
+              this.router.navigate(['/userPages/dashboard']).then(() => {
               location.reload();
-            });
-          } else {
-            this.toastr.error('Invalid Credentials!');
-            ValidateForm.validateAllFormFields(this.loginForm);
+              });
+            } 
+
+            else {
+              this.toastr.error('Invalid Credentials!');
+              this.loginForm.reset();
+              ValidateForm.validateAllFormFields(this.loginForm);
+            }
           }
+          else{
+            this.toastr.error('You Selected Wrong Account Type!', 'Please Select the Correct Account Type');
+            this.loginForm.reset();
+          }  
         },
         (error) => {
           this.toastr.error('Invalid Credentials!');
+          this.loginForm.reset();
           ValidateForm.validateAllFormFields(this.loginForm);
         }
       );
     } else {
       this.toastr.error('Invalid Credentials!');
+      this.loginForm.reset();
       ValidateForm.validateAllFormFields(this.loginForm);
     }
   }

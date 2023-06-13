@@ -8,15 +8,18 @@ import { catchError, map, switchMap, throwError } from 'rxjs';
 export class AuthService {
 
   constructor(private http:HttpClient) { }
-  apiurl='http://localhost:3000/Hostuser';
+  apiurl='http://localhost:3000/Host';
   userID = sessionStorage.getItem('username');
+  accType = sessionStorage.getItem('accountType')
+  userData:any;
   inviteData:any;
+  logbookData:any;
 
   // GetAll(){
   //   return this.http.get(this.apiurl)
   // }
 
-  GetbyId(id:any){
+  GetDatabyId(id:any){
     return this.http.get(`${this.apiurl}/${id}`).pipe(
       map((response: any) => {
         if (!response) {
@@ -39,7 +42,7 @@ export class AuthService {
   }
 
   AddInviteToUser(invite: any, username: any) {
-    return this.GetbyId(username).pipe(
+    return this.GetDatabyId(username).pipe(
       switchMap((user: any) => {
         if (user && user.Invites) {
           const maxId = user.Invites.reduce((max: number, curr: any) => Math.max(max, curr.id), 0);
@@ -54,7 +57,7 @@ export class AuthService {
   }
 
   DeleteInvite(inviteId: number, username: any) {
-    return this.GetbyId(username).pipe(
+    return this.GetDatabyId(username).pipe(
       switchMap((user: any) => {
         if (user && user.Invites) {
           const inviteIndex = user.Invites.findIndex((invite: any) => invite.id === inviteId);
@@ -71,22 +74,34 @@ export class AuthService {
     );
   }
 
-  GetInviteById(inviteId: number, username: any) {
-    return this.GetbyId(username).pipe(
+  updateLogbook(logbook: any) {
+    const logbookId = logbook.id;
+  
+    return this.GetDatabyId(this.userID).pipe(
       switchMap((user: any) => {
-        if (user && user.Invites) {
-          const invite = user.Invites.find((invite: any) => invite.id === inviteId);
-          if (invite) {
-            return invite;
+        if (user && user.Logbook) {
+          const logbookIndex = user.Logbook.findIndex((log: any) => log.id === logbookId);
+          if (logbookIndex !== -1) {
+            user.Logbook[logbookIndex].dci = logbook.dci;
+            user.Logbook[logbookIndex].timeIn = logbook.timeIn;
+            user.Logbook[logbookIndex].dco = logbook.dci;
+            user.Logbook[logbookIndex].timeOut = logbook.timeOut;
+            return this.Updateuser(user, this.userID).pipe(
+              catchError((error: any) => {
+                console.error(error);
+                return throwError('Error occurred while updating user data');
+              })
+            );
           } else {
-            throw new Error('Invite not found.');
+            throw new Error('Logbook not found.');
           }
         } else {
-          throw new Error('User not found or Invites array not available.');
+          throw new Error('User not found or Logbook array not available.');
         }
       })
     );
   }
+  
 
   SetInviteDatabyId(data: any) {
     this.inviteData = data;
@@ -95,4 +110,13 @@ export class AuthService {
   PassInviteDatabyId() {
     return this.inviteData;
   }
+
+  SetLogbookDatabyId(data: any) {
+    this.logbookData = data;
+  }
+
+  PassLogbookDatabyId() {
+    return this.logbookData;
+  }
+
 }

@@ -255,6 +255,7 @@ select{
 }
 
 .sub-cont3 h1 span{
+    text-transform: uppercase;
     color: var(--orange);
 }
 
@@ -283,7 +284,6 @@ select{
     .sub-cont1 h1{
         font-size: 5vw;
     }
-
     .visitor-btn, .host-btn, b, .log-btn, .sign-btn{
         font-size:2.5vw;
     }

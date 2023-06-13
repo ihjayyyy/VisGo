@@ -14,6 +14,8 @@ export class HeaderComponent {
   public currentMonth = this.datePipe.transform(new Date(),"yyyy-MM")
   daily: boolean = false;
   monthly: boolean = true;
+  accType = sessionStorage.getItem('accountType');
+  userID = sessionStorage.getItem('username')
 
   Dselected() {
     this.daily = true;

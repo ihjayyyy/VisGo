@@ -54,13 +54,13 @@ h1,h2,h3,h4,h5{
     box-shadow: inset 0px 6px 4px #EF9273;
 }
 
-.title,.img, .button span{
+.title,.img, .button span, .track, .pending{
     display: none;
 }
 
 @media (min-width: 640px)  {
     .unhide{
-        display: block;
+        display: flex;
     }
     .navbar{
         box-shadow: 0 0 0 2px black;
