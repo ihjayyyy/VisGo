@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule} from 'ngx-toastr'
 import {  HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from 'src/material.module';
+import { AdminDashboardComponent} from './userpages-admin/admin-components/admin-dashboard/admin-dashboard.component'
+import { AdminDeleteReportComponent } from './userpages-admin/admin-components/admin-delete-report/admin-delete-report.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { MaterialModule } from 'src/material.module';
     AdminLogInComponent,
     LoginComponent,
     RegisterComponent,
+    AdminDashboardComponent,
+    AdminDeleteReportComponent,
   ],
   imports: [
     BrowserModule,
