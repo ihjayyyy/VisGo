@@ -13,6 +13,15 @@ import {  HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from 'src/material.module';
 import { AdminDashboardComponent} from './userpages-admin/admin-components/admin-dashboard/admin-dashboard.component'
 import { AdminDeleteReportComponent } from './userpages-admin/admin-components/admin-delete-report/admin-delete-report.component';
+import { AdminDetailsOfVisitComponent } from './userpages-admin/admin-components/admin-details-of-visit/admin-details-of-visit.component';
+import { AdminLogbookComponent } from './userpages-admin/admin-components/admin-logbook/admin-logbook.component';
+import { AdminProfileComponent } from './userpages-admin/admin-components/admin-profile/admin-profile.component';
+import { AdminReportDetailsComponent } from './userpages-admin/admin-components/admin-report-details/admin-report-details.component';
+import { AdminScheduledVisitDetailsComponent } from './userpages-admin/admin-components/admin-scheduled-visit-details/admin-scheduled-visit-details.component';
+import { AdminScheduledVisitsComponent } from './userpages-admin/admin-components/admin-scheduled-visits/admin-scheduled-visits.component';
+import { AdminDeleteUserComponent } from './userpages-admin/admin-components/admin-delete-user/admin-delete-user.component';
+
+
 
 @NgModule({
   declarations: [
@@ -22,6 +31,14 @@ import { AdminDeleteReportComponent } from './userpages-admin/admin-components/a
     RegisterComponent,
     AdminDashboardComponent,
     AdminDeleteReportComponent,
+    AdminDetailsOfVisitComponent,
+    AdminLogbookComponent,
+    AdminProfileComponent,
+    AdminReportDetailsComponent,
+    AdminScheduledVisitDetailsComponent,
+    AdminScheduledVisitsComponent,
+    AdminDeleteUserComponent,
+    
   ],
   imports: [
     BrowserModule,
