@@ -22,6 +22,8 @@ import { AdminScheduledVisitsComponent } from './userpages-admin/admin-component
 import { AdminDeleteUserComponent } from './userpages-admin/admin-components/admin-delete-user/admin-delete-user.component';
 import { AdminNewUserComponent } from './userpages-admin/admin-components/admin-new-user/admin-new-user.component';
 import { AdminReportsComponent } from './userpages-admin/admin-components/admin-reports/admin-reports.component';
+import { AdminSystemManagementComponent } from './userpages-admin/admin-components/admin-system-management/admin-system-management.component';
+
 
 
 
@@ -42,6 +44,8 @@ import { AdminReportsComponent } from './userpages-admin/admin-components/admin-
     AdminDeleteUserComponent,
     AdminNewUserComponent,
     AdminReportsComponent,
+    AdminSystemManagementComponent,
+    
     
   ],
   imports: [
